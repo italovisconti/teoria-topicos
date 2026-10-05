@@ -30,7 +30,7 @@ console.log(referencia(1, 1)) // Ejecuta la función a través de la referencia 
 ```
 
 Un tipo funcional se ve así:
-<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-28.png" width="449" height="219" alt="">
+<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-28.png" width="545" alt="">
 
 **Tipo o firma de una funcion:** El tipo de una función viene dado por el **tipo de sus argumentos** y su **tipo de retorno**. Si dos funciones toman los mismos argumentos y retornan el mismo tipo, tienen el mismo tipo. Al conjunto de argumentos más el tipo de retorno también se le conoce como la **firma** (signature) de una función.
 
@@ -181,7 +181,7 @@ console.log(duplicar(10));  // Imprime: 20
 ```
 
 No podemos olvidar que estamos definiendo un tipo funcional como retorno de la función `crearMultiplicador`
-![](assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-27.png)
+<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-27.png" width="700" alt="">
 
 Internamente, si usamos esta "fabrica" de la siguiente forma:
 `const duplicar = crearMultiplicador(2)`
@@ -196,7 +196,7 @@ function(numero: number): number {
 
 Supongamos que tenemos un **auto-lavado** con dos tipos de servicios, **lavado standard** y **lavado premium** (cuesta mas). Les suena a **Strategy** ¿verdad?
 
-<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-29.png" width="498" height="266" alt="">
+<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-29.png" width="613" alt="">
 
 ```ts
 class Car {
@@ -266,7 +266,7 @@ class CarWash {
 }
 ```
 
-<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-30.png" width="516" height="173" alt="">
+<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-30.png" width="675" alt="">
 
 En esta implementacion tenemos menos partes. Pero las dos logran el mismo objetivo.
 
@@ -672,7 +672,7 @@ for (const n of numbers) {
 }
 ```
 
-![](assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-31.png)
+<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-31.png" width="570" alt="">
 *Este diagrama era para un ejemplo un tanto distinto*
 
 Aunque multiplicar por dos y sacar el cuadrado son operaciones distintas, **la estructura subyacente del proceso es idéntica**: 

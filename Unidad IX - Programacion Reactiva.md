@@ -76,7 +76,7 @@ Echemos un vistazo a la aplicación de Monitoreo Climático que necesitamos entr
 2. **El objeto WeatherData:** El que rastrea los datos provenientes de la Estación Meteorológica y actualiza las pantallas.
 3. **La pantalla (display):** Lo que muestra a los usuarios las condiciones climáticas actuales.
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-2.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-2.png" width="700" alt="">
 
 > **El objeto `WeatherData` fue escrito por Weather-O-Rama y sabe cómo comunicarse con la Estación Meteorológica física para obtener datos actualizados del clima.**
 
@@ -94,7 +94,7 @@ Recuerda, somos responsables de implementar tres elementos de visualización dif
 
 Vamos a revisar los archivos adjuntos con el código fuente que envió Johnny Hurricane, el CEO. Empezaremos con la clase `WeatherData`:
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-3.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-3.png" width="304" alt="">
 
 Estos tres métodos devuelven las mediciones climáticas más recientes para temperatura, humedad y presión barométrica, respectivamente.
 
@@ -102,7 +102,7 @@ No nos importa ahora CÓMO obtiene estos datos, solo sabemos que el objeto `Weat
 
 **Ten en cuenta que cada vez que `WeatherData` tiene valores actualizados, se llama al método `measurementsChanged()`.**
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-4.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-4.png" width="440" alt="">
 
 Echemos un vistazo al método `measurementsChanged()`, el cual, repetimos, se llama cada vez que el objeto `WeatherData` obtiene nuevos valores para temperatura, humedad y presión.
 
@@ -110,7 +110,7 @@ Parece que Weather-O-Rama dejó una nota en los comentarios para **agregar nuest
 
 Entonces, nuestro trabajo es modificar el método `measurementsChanged()` para que **actualice las tres visualizaciones**: la de condiciones actuales, la de estadísticas climáticas y la de pronóstico.
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-5.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-5.png" width="200" alt="">
 
 ### Nuestro Objetivo
 
@@ -132,7 +132,7 @@ Esperamos que, si la Estación Meteorológica tiene éxito, habrá más de tres 
 
 > **Extensibilidad:** Otros desarrolladores podrían querer crear nuevas visualizaciones personalizadas. ¿Por qué no permitir a los usuarios agregar (o eliminar) tantos elementos de visualización como deseen a la aplicación? Actualmente, conocemos los tres tipos de visualización iniciales (condiciones actuales, estadísticas y pronóstico), pero esperamos un vibrante mercado para nuevas pantallas en el futuro.
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-6.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-6.png" width="403" alt="">
 
 ### Adoptando una Primera Implementación Errónea de la Estación Meteorológica
 
@@ -177,7 +177,7 @@ Piensa en todos esos conceptos y principios del Capítulo 1: ¿cuáles estamos v
 | **By coding to concrete implementations, we have no way to add or remove other display elements without making changes to the code.**                                         | Al programar sobre implementaciones concretas, **no tenemos forma de agregar o eliminar otros elementos de visualización** sin hacer cambios en el código.                                                    |
 | **What if we want to add or remove displays at runtime? This looks hardcoded.**                                                                                               | ¿Qué pasa si queremos agregar o eliminar pantallas en tiempo de ejecución? Esto parece **codificado rígidamente (hardcoded)**.                                                                                |
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-7.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-7.png" width="700" alt="">
 
 ### Conoce el Patrón Observador
 
@@ -192,7 +192,7 @@ Sabes cómo funcionan las suscripciones a periódicos o revistas:
 
 La ventaja de este patron es si conoces alguno de estos conceptos del mundo real, ya sabes como funciona el patron observador. Llamamos al editor el **SUJETO** y a los suscriptores, los **OBSERVADORES**.
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-8.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-8.png" width="700" alt="">
 
 | **Texto Original en Inglés**                                                                                       | **Traducción al Español**                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -216,11 +216,11 @@ La ventaja de este patron es si conoces alguno de estos conceptos del mundo real
 | **¡El Sujeto obtiene un nuevo valor de dato!**                                                                                                              |
 | Ahora Pato y todos los demás observadores reciben una notificación de que el Sujeto ha cambiado.                                                            |
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-9.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-9.png" width="594" alt="">
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-10.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-10.png" width="482" alt="">
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-11.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-11.png" width="469" alt="">
 
 | **El objeto Ratón pide ser eliminado como observador.**                                                                                                                                                                           |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -230,11 +230,11 @@ La ventaja de este patron es si conoces alguno de estos conceptos del mundo real
 | **El Sujeto tiene otro nuevo valor `int`.**                                                                                                                                                                                       |
 | Todos los observadores reciben otra notificación, excepto el Ratón, que ya no está incluido. Que no se lo digas a nadie, pero el Ratón extraña en secreto esos valores `int`... quizás pida ser un observador de nuevo algún día. |
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-12.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-12.png" width="489" alt="">
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-13.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-13.png" width="497" alt="">
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-14.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-14.png" width="488" alt="">
 
 ### Definiendo el Patron Observador
 
@@ -242,7 +242,7 @@ El Patrón Observador define una **dependencia uno-a-muchos** entre objetos, de 
 
 El Patrón Observador define una **relación uno-a-muchos** entre un conjunto de objetos. Cuando el estado de un objeto cambia, **todos sus dependientes son notificados**.
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-15.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-15.png" width="700" alt="">
 
 | **Texto Original en Inglés**                                                                                                                                                                                                                           | **Traducción al Español**                                                                                                                                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -264,14 +264,14 @@ Cuando dos objetos tienen un "acoplamiento débil", pueden interactuar entre sí
 - **Podemos reutilizar sujetos u observadores de forma independiente.** Si necesitamos usar uno de los dos en otro contexto, podemos hacerlo fácilmente porque no están fuertemente atados el uno al otro.
 - **Los cambios en el sujeto o en el observador no afectan a la contraparte.** Gracias al acoplamiento débil, somos libres de modificar el código de cualquiera de los dos, siempre y cuando sigan cumpliendo con sus obligaciones de implementar las interfaces de Sujeto (_Subject_) u Observador (_Observer_).
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-16.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-16.png" width="465" alt="">
 
 Esfuérzate por conseguir diseños de acoplamiento débil entre objetos que interactúan.
 
 **Ejercicio:**
 Antes de continuar, intenta esbozar las clases que necesitarás para implementar la Estación Meteorológica, incluyendo la clase `WeatherData` y sus elementos de visualización. Asegúrate de que tu diagrama muestre cómo encajan todas las piezas y también cómo otro desarrollador podría implementar su propio elemento de visualización.
 
-![](assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-17.png)
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-17.png" width="700" alt="">
 
 | **Texto Original en Inglés**                                                                                                                                      | **Traducción al Español**                                                                                                                                                                              |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

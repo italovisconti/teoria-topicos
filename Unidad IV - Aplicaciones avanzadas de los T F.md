@@ -4,13 +4,13 @@
 
 Ya conocemos al famoso **patron decorador**.
 
-<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-16%201.png" width="529" height="205" alt="">
+<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-16%201.png" width="700" alt="">
 
 Supongamos que tenemos una interfaz IWidgetFactory que declara un método makeWidget() que devuelve un Widget. La implementación concreta, WidgetFactory, implementa el método para instanciar nuevos objetos Widget.
 
 Supongamos que queremos reutilizar un Widget, de modo que en lugar de crear siempre uno nuevo, queremos crear solo uno y seguir devolviéndolo (singleton). Sin modificar nuestro WidgetFactory, podemos crear un decorador llamado SingletonDecorator, que envuelve un IWidgetFactory, como se muestra en el siguiente listado, y extiende su comportamiento para garantizar que solo se cree un único Widget.
 
-<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-17%201.png" width="392" height="201" alt="">
+<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-17%201.png" width="423" alt="">
 
 Implementen esto...
 
@@ -115,7 +115,7 @@ Ahora veamos cómo podemos añadir el comportamiento de singleton.
 Proporcionamos una nueva función, singletonDecorator(), que toma una función de tipo WidgetFactory y devuelve otra función de tipo WidgetFactory. 
 Recuerda que una lambda es una función sin nombre, que podemos retornar desde otra función. En el siguiente listado, nuestro decorador tomará un factory y lo usará para construir una nueva función que gestione el comportamiento de singleton.
 
-<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-18%201.png" width="394" height="155" alt="">
+<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-18%201.png" width="427" alt="">
 ``
 ```ts
 class Widget { }
@@ -185,6 +185,6 @@ En mi opinion la mejor definición es: Las **clausuras** (closures) son funcio
 
 Una clausura tiene acceso a las variables del entorno que la encierra, en un lenguaje mas técnico, el closure tiene acceso al scope de la función que la encierra.
 
-<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-19%201.png" width="518" height="194" alt="">
+<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-19%201.png" width="664" alt="">
 
 Las clausuras  solo tienen sentido si tenemos funciones de orden superior. Si no podemos devolver una función desde otra función, no hay un entorno que capturar. En ese caso, todas las funciones están en el ámbito global (global scope), que es su entorno, y pueden hacer referencia a variables globales.

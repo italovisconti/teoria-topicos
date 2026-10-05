@@ -106,7 +106,7 @@ Sin un gestor de paquetes, tendrían que rastrear e instalar cada una de estas d
 > [!TIP] ¿Se han dado cuenta?
 > Cuando instalan un paquete y luego revisan `node_modules`, aparecen un montón de carpetas nuevas que no esperaban. Esas son las dependencias transitivas.
 
-![](../assets/Unidad%20Adicional%20-%20Manejadores%20de%20Paquetes/deps-transitivas.gif)
+<img src="../assets/Unidad%20Adicional%20-%20Manejadores%20de%20Paquetes/deps-transitivas.gif" width="700" alt="">
 
 *Instalaste 1 paquete (axios)… y entraron 47. Eso son las dependencias transitivas.*
 

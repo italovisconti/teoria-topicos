@@ -42,7 +42,7 @@ Que tantas cosas corran en la web no es precisamente lo mejor, de hecho es un te
   - Maneja eventos del usuario, modifica la estructura en tiempo real y gestiona peticiones asíncronas.
   - *Analogía:* El sistema nervioso y los músculos.
 
-![](assets/Unidad%200.I%20-%20Desarrollo%20Web/dom-manipulacion.gif)
+<img src="assets/Unidad%200.I%20-%20Desarrollo%20Web/dom-manipulacion.gif" width="700" alt="">
 
 *El DOM: el navegador convierte el HTML en un árbol de nodos, y JavaScript lo selecciona y modifica.*
 
@@ -57,7 +57,7 @@ Que tantas cosas corran en la web no es precisamente lo mejor, de hecho es un te
   - **El presente y futuro: WebAssembly (Wasm):** Permite compilar lenguajes como C, C++, Rust o Go a un formato binario de bajo nivel que corre en el navegador a velocidad casi nativa. *Nota importante:* No reemplaza a JS, sino que colabora con él en tareas pesadas (edición de video, Figma, motores de videojuegos, IA en el cliente).
   - **En el Backend:** La web es agnóstica; en el servidor corre cualquier lenguaje (Node.js/TS, Python, Java, Go, C#, PHP, Rust).
 
-![](assets/Unidad%200.I%20-%20Desarrollo%20Web/pilares-frontend.gif)
+<img src="assets/Unidad%200.I%20-%20Desarrollo%20Web/pilares-frontend.gif" width="700" alt="">
 
 *Los tres pilares en acción: HTML (estructura) → CSS (diseño) → JavaScript (lógica).*
 
@@ -76,7 +76,7 @@ Que tantas cosas corran en la web no es precisamente lo mejor, de hecho es un te
 
 ## 4. ¿Cómo Funciona un Navegador Web?
 
-![](assets/Unidad%200.I%20-%20Desarrollo%20Web/ciclo-peticion-web.gif)
+<img src="assets/Unidad%200.I%20-%20Desarrollo%20Web/ciclo-peticion-web.gif" width="700" alt="">
 
 ```mermaid
 sequenceDiagram

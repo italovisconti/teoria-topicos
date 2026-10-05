@@ -10,7 +10,7 @@ Antes de adentrarnos en los patrones específicos, necesitamos reforzar los conc
 
 ## 1. POO 101
 
-![](assets/Unidad%200.II%20-%20Fundamentos-POO/clase-objeto.gif)
+<img src="assets/Unidad%200.II%20-%20Fundamentos-POO/clase-objeto.gif" width="700" alt="">
 
 Lo mínimo indispensable antes de cualquier otra cosa:
 
@@ -78,7 +78,7 @@ classDiagram
 
 ## 2. El Polimorfismo: La Base de la Flexibilidad
 
-![](assets/Unidad%200.II%20-%20Fundamentos-POO/polimorfismo.gif)
+<img src="assets/Unidad%200.II%20-%20Fundamentos-POO/polimorfismo.gif" width="700" alt="">
 
 **Definición**: La capacidad de que objetos de diferentes tipos respondan al mismo mensaje (método) de maneras distintas.
 
@@ -223,7 +223,7 @@ class Moto extends Vehiculo {
 
 ## 4. Herencia y Composición: "Es un" vs "Tiene un"
 
-![](assets/Unidad%200.II%20-%20Fundamentos-POO/herencia-composicion.gif)
+<img src="assets/Unidad%200.II%20-%20Fundamentos-POO/herencia-composicion.gif" width="700" alt="">
 
 La diferencia se ve mejor en un diagrama:
 
@@ -423,7 +423,7 @@ console.log(cuenta.saldoActual); // 100
 // cuenta.saldo = 999999; // Error de compilación: es privado
 ```
 
-![](assets/Unidad%200.II%20-%20Fundamentos-POO/encapsulacion.png)
+<img src="assets/Unidad%200.II%20-%20Fundamentos-POO/encapsulacion.png" width="700" alt="">
 
 El diagrama resume la idea: el **estado** (`saldo`, `titular`) vive encerrado y desde afuera solo se llega a través de la **interfaz pública**. El acceso directo al estado está bloqueado; los métodos son la vía legítima para cambiarlo.
 

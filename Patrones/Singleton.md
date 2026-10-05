@@ -35,7 +35,7 @@ Mapeo al patrón:
 Qué pasa si hubiera dos “instancias”?: Un avión recibe “autorizado a aterrizar” de una torre y “espere en patrón” de la otra, teniendo como resultado: **caos**. 
 
 #### Estructura
-![](../assets/Patrones/image-1%201.png)
+<img src="../assets/Patrones/image-1%201.png" width="700" alt="">
 La clase **Singleton** declara el método estático `obtenerInstancia` que devuelve la misma instancia de su propia clase.
 El constructor del Singleton debe ocultarse del código cliente. La llamada al método `obtenerInstancia` debe ser la única manera de obtener el objeto de Singleton.
 #### Ejemplo: Chocolate Boiler
