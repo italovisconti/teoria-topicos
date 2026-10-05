@@ -9,7 +9,7 @@ Italo Visconti, Desarrollador de software con poco tiempo de graduado pero alred
 
 Hacer que los estudiantes se presenten con: **Nombre, por que les gusta programar, si actualmente trabajan**.
 
-A mi lo que me gusta de programar es que solo necesitas esto :LiHand:, y para crear cosas maravillosas solo necesitas -> :LiHand:, y el unico limitante eres tu.
+A mi lo que me gusta de programar es que solo necesitas esto :material-hand-back-right:, y para crear cosas maravillosas solo necesitas -> :material-hand-back-right:, y el unico limitante eres tu.
 no necesitas grandes maquinas, materiales, permisos. Todo depende de ti, de que tanto te esfuerces, y de lo que te imagines.
 
 Ademas, la informatica es un campo que recompensa la curiosidad y la creatividad.
