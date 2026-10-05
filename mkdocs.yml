@@ -1,5 +1,7 @@
 site_name: Teoría — Tópicos Especiales de Programación
-site_url: https://italovisconti.github.io/teoria-topicos/
+site_url: https://www.italovisconti.tech/teoria-topicos/
+repo_url: https://github.com/italovisconti/teoria-topicos
+edit_uri: edit/main/
 site_description: Apuntes de la asignatura Tópicos Especiales de Programación (UCAB)
 docs_dir: .site-src
 
@@ -16,12 +18,22 @@ theme:
         icon: material/weather-sunny
         name: Modo claro
   features:
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
-    - navigation.top
     - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - toc.follow
     - content.code.copy
+    - content.code.select
+    - content.action.edit
     - search.suggest
     - search.highlight
+    - search.share
 
 markdown_extensions:
   - admonition
