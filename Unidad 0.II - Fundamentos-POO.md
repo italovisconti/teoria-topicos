@@ -597,7 +597,7 @@ Estos fundamentos son la materia prima de los patrones que vienen:
 - **Comportamiento intercambiable** (polimorfismo + composición): [Strategy](Patrones/Strategy.md), [Decorator](Patrones/Decorator.md)
 - **Creación centralizada** (interfaces + encapsulación): [Factory](Patrones/Factory.md), [Singleton](Patrones/Singleton.md)
 - **Estructuras recursivas** (composición): [Composite](Patrones/Composite.md)
-- **Contexto más amplio**: [Unidad I - Paradigmas de Programación](Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n.md) · [Unidad II - Composicion, Tipos algebraicos y patrones de d](Unidad%20II%20-%20Composicion%2C%20Tipos%20algebraicos%20y%20patrones%20de%20d.md)
+- **Contexto más amplio**: [Unidad I - Paradigmas de Programación](Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n.md) · [Unidad II - Composición, Tipos algebraicos y patrones de d](Unidad%20II%20-%20Composicion%2C%20Tipos%20algebraicos%20y%20patrones%20de%20d.md)
 
 ---
 

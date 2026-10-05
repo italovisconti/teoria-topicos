@@ -87,11 +87,11 @@ class ProductService {
 
 > **Violación del DRY**: Don't Repeat Yourself - cada aspecto está duplicado en múltiples lugares.
 
-Y ademas de eso, el código de negocio queda "ensuciado" con lógica de aspectos, dificultando su comprensión y mantenimiento.
+Y además de eso, el código de negocio queda "ensuciado" con lógica de aspectos, dificultando su comprensión y mantenimiento.
 
-Por eso, hablamos de orientar el diseño de nuestro software hacia los aspectos. Al igual que como podemos orientar el diseno del software hacia otras preocupaciones, como la programacion orientada al dominio (DDD) o la programacion orientada a pruebas (TDD).
+Por eso, hablamos de orientar el diseño de nuestro software hacia los aspectos. Al igual que como podemos orientar el diseño del software hacia otras preocupaciones, como la programación orientada al dominio (DDD) o la programación orientada a pruebas (TDD).
 
-No veremos esto en la materia pero en un futuro (muy cercano) escucharan esto mas a fondo
+No veremos esto en la materia pero en un futuro (muy cercano) escucharán esto más a fondo.
 
 #### Domain-Driven Design (DDD)
 
@@ -267,7 +267,7 @@ class CreateUserHandler {
 }
 ```
 
-El concepto de Handler se ira haciendo cada vez mas familiar para ustedes. Un **Handler** es un patrón que encapsula la **lógica de procesamiento** de una operación específica. La palabra "handler" significa "manejador", "procesador" o "orquestador".
+El concepto de Handler se irá haciendo cada vez más familiar para ustedes. Un **Handler** es un patrón que encapsula la **lógica de procesamiento** de una operación específica. La palabra "handler" significa "manejador", "procesador" o "orquestador".
 
 - Procesa un tipo específico de comando o mensaje, por eso suele tener un método genérico como `execute()` que realiza la operación completa.
 - Recibe sus dependencias (implementaciones concretas) por constructor. A esto se le llama inyección de dependencias.
@@ -380,9 +380,9 @@ class NotificationService {
 }
 ```
 
-El concepto de Service tambien se ira haciendo cada vez mas familiar para ustedes. Un **Service** es un patrón que encapsula la **lógica de negocio** relacionada con una funcionalidad específica del dominio. La palabra "service" significa "servicio" o "funcionalidad". En este caso, el Service se encarga de manejar las notificaciones.
+El concepto de Service también se irá haciendo cada vez más familiar para ustedes. Un **Service** es un patrón que encapsula la **lógica de negocio** relacionada con una funcionalidad específica del dominio. La palabra "service" significa "servicio" o "funcionalidad". En este caso, el Service se encarga de manejar las notificaciones.
 
-Un servicio encapsula un comportamiento **reutilizable**. Mientras que un **Handler** orquesta **un flujo de negocio específico** usando servicios y repositorios
+Un servicio encapsula un comportamiento **reutilizable**. Mientras que un **Handler** orquesta **un flujo de negocio específico** usando servicios y repositorios.
 
 #### Mini-ejercicio OCP
 
@@ -917,7 +917,7 @@ interface ISearchProducts {
 **¿Parameter Object?**
 
 Es un objeto que encapsula un conjunto de parámetros relacionados en lugar de pasarlos como argumentos individuales.
-Estos objetos permiten interfaces uniformes (usualmente con el uso de genericos), habilitan decoradores genericos, y tambien permiten agregar logica de validación en sus constructores.
+Estos objetos permiten interfaces uniformes (usualmente con el uso de genéricos), habilitan decoradores genéricos, y también permiten agregar lógica de validación en sus constructores.
 
 Un ejemplo:
 

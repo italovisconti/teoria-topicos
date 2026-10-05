@@ -17,7 +17,7 @@
 	- **Creado en solo 10 días:** En mayo de 1995, Brendan Eich programó la primera versión de JavaScript (originalmente bautizado *Mocha*) en tan solo 10 días para el navegador Netscape Navigator 2.0. Nadie imaginó que un lenguaje diseñado en semana y media para animaciones básicas terminaría ejecutando sistemas bancarios y servidores globales.
 	- **La Ley de Atwood (2007):** Postulado de Jeff Atwood (cofundador de Stack Overflow): *"Cualquier aplicación que pueda ser escrita en JavaScript, eventualmente será escrita en JavaScript"*. Hoy en día corren en el navegador desde suites de diseño complejas como Figma hasta emuladores de consolas, bases de datos completas y modelos de Inteligencia Artificial locales (vía WebAssembly y WebGPU).
 
-Que tantas cosas corran en la web no es precisamente lo mejor, de hecho es un tema bastante controversial. Lo veremos mas adelante...
+Que tantas cosas corran en la web no es precisamente lo mejor, de hecho es un tema bastante controversial. Lo veremos más adelante...
 
 - **Dinámica / Pregunta al aula:**
 	- *¿Quiénes ya han construido algo para la web? ¿Con qué tecnologías?*

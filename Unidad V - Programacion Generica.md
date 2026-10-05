@@ -30,8 +30,8 @@ function buscarBoolean(arr: boolean[], valor: boolean): number {
 }
 ```
 
-Otra vez hablamos de patron... Algo se esta repitiendo y es obvio.
-Y como en todos los conceptos anteriores, estamos buscando encapsular comportamientos de alguna forma, en este caso notamos que existe un recorrido que se esta repitiendo en cada una de las funciones, el detalle es que en cada una de ellas estamos trabajando con datos distintos, encapsular esto parece imposible... o no?
+Otra vez hablamos de patrón... Algo se está repitiendo y es obvio.
+Y como en todos los conceptos anteriores, estamos buscando encapsular comportamientos de alguna forma, en este caso notamos que existe un recorrido que se está repitiendo en cada una de las funciones, el detalle es que en cada una de ellas estamos trabajando con datos distintos, encapsular esto parece imposible... ¿o no?
 
 Existe una solución elegante para este tipo de problemas.`
 ```ts
@@ -57,7 +57,7 @@ Se puede ver como algo así:
 ```ts
 // Cuando:
 buscar<number>(...)
-// T = number y la funcion buscar se ve como:
+// T = number y la función buscar se ve como:
 function buscar(arr: number[], valor: number): number {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] === valor) return i;
@@ -104,7 +104,7 @@ primero(["a", "b"]);       // devuelve string
 primero([true, false]);    // devuelve boolean
 ```
 
-Y aunque no lo crean, ya han usado tipos genéricos, solo que como TypeScript puede inferir el tipo gracias a los parámetros de entrada, no es necesario escribirlo de manera explicita.
+Y aunque no lo crean, ya han usado tipos genéricos, solo que como TypeScript puede inferir el tipo gracias a los parámetros de entrada, no es necesario escribirlo de manera explícita.
 
 El famoso Map, se ve algo así:
 
@@ -189,7 +189,7 @@ Funciona de la siguiente manera:
 
 Usé intencionalmente nombres de variables diferentes aquí para mostrar que el valor de tipo se propaga por la cadena y que el nombre de la variable no importa.
 
-Incluso podemos ir mas alla, que pasa si queremos restringir nuestros genéricos?
+Incluso podemos ir más allá, ¿qué pasa si queremos restringir nuestros genéricos?
 TypeScript te permite **restringir** qué tipos pueden usarse mediante la palabra clave `extends`.
 
 #### Ejemplo
@@ -253,7 +253,7 @@ const cosas = [
 // calcularTotal(cosas); // ERROR: tipo no compatible
 ```
 
-Hay uso mucho mas simples, y muy útiles.
+Hay usos mucho más simples, y muy útiles.
 
 ```ts
 class Optional<T> {
@@ -286,13 +286,13 @@ En este caso, la lógica de manejar la ausencia de un valor es independiente del
 Pensando un poco, podemos notar que `Optional` está en una dimensión completamente diferente a `T` (el tipo genérico), ya que cualquier cambio que hagamos a `Optional` no afecta a `T`, y cualquier cambio hecho a `T` no afecta a `Optional`. 
 **Este aislamiento es una característica extremadamente poderosa de la programación genérica.**
 
-Sabiendo esto... Como definiríamos a un tipo genérico?
+Sabiendo esto... ¿cómo definiríamos a un tipo genérico?
 
 Un tipo genérico es una función genérica, clase, interfaz, etc., que está parametrizada sobre uno o más tipos. Los tipos genéricos nos permiten escribir código general que funciona con diferentes tipos, posibilitando un **alto nivel de reutilización de código**.
 
 <img src="assets/Unidad%20V%20-%20Programacion%20Generica/image-1.png" width="600" alt="">
 
-Los tipos genericos estan en muchisimos lados, y por eso su entendimiento es tan importante. Pensemos en algo que hacemos todos los días. ¿Qué estructuras de datos almacenen una _secuencia_ de cosas?
+Los tipos genéricos están en muchísimos lados, y por eso su entendimiento es tan importante. Pensemos en algo que hacemos todos los días. ¿Qué estructuras de datos almacenen una _secuencia_ de cosas?
 
 *Array, listas, strings...*
 
@@ -325,7 +325,7 @@ Piensen en un mazo de cartas (el _Iterable_). El _Iterador_ es su mano, que saca
 
 El bucle `for...of` es simplemente un consumidor elegante que le pide el _Iterador_ al _Iterable_ y luego llama `.next()`, `.next()`, `.next()`... por nosotros.
 
-*Hay una definición mucho mas técnica para esto; la cual se encuentra en la referencia indicada.*
+*Hay una definición mucho más técnica para esto; la cual se encuentra en la referencia indicada.*
 
 
 **Aquí es donde quiero que vean la luz.**

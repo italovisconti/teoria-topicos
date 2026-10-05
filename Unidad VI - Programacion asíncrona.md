@@ -86,17 +86,17 @@ console.log("3. Fin (¡pero aparece primero!)");
 - El navegador sigue respondiendo
 
 
-#### Pero... Que es un callback?
+#### Pero... ¿Qué es un callback?
 
-Son funciones que son llamadas o invocadas al terminar la ejecuación de alguna otra función o tarea. Pero no interrumpen el proceso. 
+Son funciones que son llamadas o invocadas al terminar la ejecución de alguna otra función o tarea. Pero no interrumpen el proceso. 
 
-Se usan como parámetros de funciones que se ejecutan en segundo plano. O mejor dicho, parametros de funciones que sabes que se ejecutara pero no sabes exactamente cuando.
+Se usan como parámetros de funciones que se ejecutan en segundo plano. O mejor dicho, parámetros de funciones que sabes que se ejecutarán pero no sabes exactamente cuándo.
 
 En el ejemplo tenemos un callback en el método setTimeout(), ese callback se ejecuta cuando finaliza el conteo de tiempo de setTimeout(), que se ejecuta en segundo plano.
 
-Otro caso habitual son los eventos. Las funciones que se asignan como manejadores de eventos son funciones callback, que se ejecutan cuando se produce un evento. La espera del evento es una tarea que se está ejecuntando en segundo plano. (De esto se trata tambien la programacion reactiva)
+Otro caso habitual son los eventos. Las funciones que se asignan como manejadores de eventos son funciones callback, que se ejecutan cuando se produce un evento. La espera del evento es una tarea que se está ejecutando en segundo plano. (De esto se trata también la programación reactiva)
 
-Un ejemplo mas sencillo es que si pedido() y entrega() son dos funciones asincronas y no se manejan bien, entrega puede ocurrir primero que pedido (no es lo que queremos).
+Un ejemplo más sencillo es que si pedido() y entrega() son dos funciones asíncronas y no se manejan bien, entrega puede ocurrir primero que pedido (no es lo que queremos).
 
 FOTO
 
@@ -556,6 +556,6 @@ async function myFunction() {
 
 ---
 
-### Parte Practica
+### Parte Práctica
 
 **Práctica:** [Torneo Pokémon Asíncrono](https://github.com/italovisconti/Guias-Practicas-Topicos/blob/main/Torneo%20Pokemon%20Asincrono/Practica%20-%20Torneo%20Pokemon%20Asincrono.md) · [Solución](https://github.com/italovisconti/Guias-Practicas-Topicos/blob/main/Torneo%20Pokemon%20Asincrono/Practica%20-%20Torneo%20Pokemon%20Asincrono%20-%20SOLUCION.ts)

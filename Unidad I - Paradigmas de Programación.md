@@ -12,7 +12,7 @@ Mientras que, los ==paradigmas== son **modelos de escritura de código que se pu
 
 Pero algo a tener en cuenta es que los lenguajes de programación tienden a encajar en paradigmas específicos. Es decir, no hay un lenguaje que optimice todos los paradigmas a la vez. Muchos son multiparadigma (TypeScript, Python, C#), pero cada uno favorece ciertos estilos con menos fricción y mejores garantías.
 
-La lógica detrás de los paradigmas de programación se parece mucho a la época en donde estudiábamos *"que es un algoritmo"* y la *"eficiencia"* de los mismos. Ahora sabemos que los algoritmos son **una secuencia finita de instrucciones, cada una de las cuales tiene un significado preciso y puede ejecutarse con una cantidad finita de esfuerzo en un tiempo finito.** Y podemos agregarle una capa mas de complejidad gracias a los paradigmas de programación.
+La lógica detrás de los paradigmas de programación se parece mucho a la época en donde estudiábamos *"que es un algoritmo"* y la *"eficiencia"* de los mismos. Ahora sabemos que los algoritmos son **una secuencia finita de instrucciones, cada una de las cuales tiene un significado preciso y puede ejecutarse con una cantidad finita de esfuerzo en un tiempo finito.** Y podemos agregarle una capa más de complejidad gracias a los paradigmas de programación.
 
 **Antes**:
 <img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Pasted%20image%2020250909171743.png" width="556" alt="">
@@ -74,9 +74,9 @@ En los paradigmas puramente funcionales, las funciones se conocen como **funcion
 1. No modifican el estado del programa.
 2. Siempre devuelven el mismo valor dada la misma entrada.
 
-*?Que les hace pensar esto?*
+*¿Qué les hace pensar esto?*
 
-Estas características hacen que el paradigma funcional se base fuertemente en la **recursion**. Ademas de esto, es **fácil de debuggear**.
+Estas características hacen que el paradigma funcional se base fuertemente en la **recursión**. Además de esto, es **fácil de debuggear**.
 
 **Ejemplo de Función Pura vs. No Pura**:
 - La función `random` **no sería una función pura** porque, dada la misma entrada, puede devolver un número diferente cada vez.
@@ -108,7 +108,7 @@ Aquí es donde podemos ver claramente las **características propias del paradig
 	- Pueden ser puras o impuras, dependiendo de si usan o modifican estado externo.
 	- Permiten crear closures: funciones que “recuerdan” variables del contexto donde se crearon.
 
-Se dan cuenta? Estoy seguro que esta no es la primera vez que ven este tipo de funciones.
+¿Se dan cuenta? Estoy seguro que esta no es la primera vez que ven este tipo de funciones.
 
 Mientras que en la programación imperativa tienes:
 ```java
@@ -126,7 +126,7 @@ En la programación funcional tienes:
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i)=>i*i)
 ```
 
-(Tenemos una composicion de funciones)
+(Tenemos una composición de funciones)
 
 **Ejercicios**: 
 - Crear el Map desde cero en TS.
@@ -154,11 +154,11 @@ En este caso, las referencias mouse-x y mouse-y son una representación de las c
 
 Ahora tenemos `a = x + y`
 
-que pasaría 
+¿Qué pasaría?
 
 En un paradigma tradicional, `a` es la suma de `x + y`, en el momento en el que se realiza la operación, si posteriormente modificamos x o modificamos y. A no se vería afectado. **En programación reactiva**, en cambio, las modificaciones hacia `x` o `y`, pudieran significar que `a` debe **recalcular** su valor, como las celdas de Excel que si modificamos un valor con el que están sincronizadas, la celda se **recalcula**.
 
-**Y saben en que casos esto es muy util? Cuando debemos reaccionar a distintas interacciones.**
+**¿Y saben en qué casos esto es muy útil? Cuando debemos reaccionar a distintas interacciones.**
 Por eso este paradigma resulta especialmente útil en interfaces de usuario y sistemas en tiempo real: por ejemplo:
 - UIs (React, Vue).
 - Dashboards que muestran datos en vivo.
@@ -215,9 +215,9 @@ La **herencia** es uno de los pilares de la **POO**, nos permite crear una jer
 2. **Organización Lógica**. Modelando el mundo real de una forma muy natural.
 3. **Polimorfismo**. Permitiendo tratar a objetos de las subclases como si fueran objetos de la superclase.
 
-Una subclase puede agregar nuevos metodos. Pero tambien la subclase puede sobreescribir un metodo de la superclase
+Una subclase puede agregar nuevos métodos. Pero también la subclase puede sobrescribir un método de la superclase.
 
-**Sobreescritura y Sobrecarga de Metodos**:
+**Sobrescritura y Sobrecarga de Métodos**:
 
 <img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/POO-U1-Diagrama4.png" width="600" alt="">
 
@@ -259,9 +259,9 @@ Pero si luego ves `00011001` escrito en la memoria, ¿cómo sabes lo que signi
 
 Para evitar este caos, los lenguajes de programación nos obligan a ponerle "etiquetas" a nuestros datos. A estas etiquetas las llamamos **tipos**.
 
-Cuando declaras `let edad: number = 25;` lo que estas diciendo es:
+Cuando declaras `let edad: number = 25;` lo que estás diciendo es:
 
-Trata a esta caja de memoria que llamo `edad` como un `numero`
+Trata a esta caja de memoria que llamo `edad` como un `número`
 
 Un **tipo** es una etiqueta que le dice a la computadora 3 cosas muy importantes:
 - **¿Qué puedo guardar aquí?**
@@ -271,7 +271,7 @@ Un **tipo** es una etiqueta que le dice a la computadora 3 cosas muy important
 Esta comprobación de tipos la realiza el compilador en tiempo de compilación o tiempo de ejecución. Si la comprobación de tipos falla acabamos con un fallo de compilación o con un error en tiempo de ejecución.
 
 Pero muchas veces el sistema de tipos es para **proteger a la computadora de nosotros**. 
-Y por eso ofrece mecanismos para **transformar errores de ejecución en errores de compilación**. Esto podría sonar raro porque convertimos un **error** en otro **error**, pero todo radica en cual es el tipo de error mas peligroso, y este es sin duda un error de ejecución.
+Y por eso ofrece mecanismos para **transformar errores de ejecución en errores de compilación**. Esto podría sonar raro porque convertimos un **error** en otro **error**, pero todo radica en cuál es el tipo de error más peligroso, y este es sin duda un error de ejecución.
 
 - **Correctitud:**
 	

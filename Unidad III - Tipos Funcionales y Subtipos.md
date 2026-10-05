@@ -4,13 +4,13 @@
 Ya conocemos la POO, conocemos los tipos básicos y los nuevos tipos que podemos crear a partir de ellos. 
 Ahora nos adentraremos en una nueva característica de los sistemas tipados, la habilitada de "tipar" funciones. Si podemos nombrar tipos de funciones y usar funciones en los mismos lugares que usamos valores de otros tipos —como variables, argumentos y valores de retorno de funciones— podemos simplificar la implementación de varias construcciones comunes y abstraer algoritmos comunes a funciones.
 
-### La Base? Funciones como ciudadanos de primera clase
-La base fundamental de esta unidad se basa en que TypeScript (y muchos otros lenguajes mas) trata a las funciones como "*ciudadanos de primera clase*", esto significa que podemos manipular las funciones tal cual como lo hacemos con otros tipos de datos como `string`, `number` y `boolean`
+### ¿La base? Funciones como ciudadanos de primera clase
+La base fundamental de esta unidad se basa en que TypeScript (y muchos otros lenguajes más) trata a las funciones como "*ciudadanos de primera clase*", esto significa que podemos manipular las funciones tal cual como lo hacemos con otros tipos de datos como `string`, `number` y `boolean`.
 
 **Importante: Diferencias entre referenciar y ejecutar una función**
 
 ```ts
-// Lo mas basico
+// Lo más básico
 function saludar() {
     console.log("¡Hola mundo!");
 }
@@ -21,25 +21,25 @@ saludar(); // Ejecuta la función -> ¡Hola mundo!
 function sumar(a: number, b: number): number {
     return a + b;
 }
-const referencia = sumar; // Asigna la funcion a una variable
-const resultado = sunar(1, 1); // Asigna el resultado (2) a una variable
+const referencia = sumar; // Asigna la función a una variable
+const resultado = sumar(1, 1); // Asigna el resultado (2) a una variable
 
 console.log(referencia); // Muestra la función como objeto -> [Function: suma]
 console.log(resultado); // Muestra el resultado -> 2
-console.log(referencia(1, 1)) // Ejecuta la función a través de la referencia y muestra el resultado -> 2
+console.log(referencia(1, 1)); // Ejecuta la función a través de la referencia y muestra el resultado -> 2
 ```
 
 Un tipo funcional se ve así:
 <img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-28.png" width="545" alt="">
 
-**Tipo o firma de una funcion:** El tipo de una función viene dado por el **tipo de sus argumentos** y su **tipo de retorno**. Si dos funciones toman los mismos argumentos y retornan el mismo tipo, tienen el mismo tipo. Al conjunto de argumentos más el tipo de retorno también se le conoce como la **firma** (signature) de una función.
+**Tipo o firma de una función:** El tipo de una función viene dado por el **tipo de sus argumentos** y su **tipo de retorno**. Si dos funciones toman los mismos argumentos y retornan el mismo tipo, tienen el mismo tipo. Al conjunto de argumentos más el tipo de retorno también se le conoce como la **firma** (signature) de una función.
 
 Por lo tanto, podemos:
 #### 1. Asignar funciones a variables
 
 **Un ejemplo**:
 ```ts
-// Creamos una funcion normal
+// Creamos una función normal
 function saludar(nombre: string): string {
   return `Hola, ${nombre}!`;
 }
@@ -47,13 +47,13 @@ function saludar(nombre: string): string {
 // El tipo 'saludoFunction' describe cómo debe ser la función.
 type saludoFunction = (nombre: string) => string;
 
-// asignamos la funcion a una variable.
+// Asignamos la función a una variable.
 const miSaludo: saludoFunction = saludar;
 
 // Ahora podemos usar la variable como si fuera la función original.
 console.log(miSaludo("Mundo")); // Salida: Hola, Mundo!
 
-// Incluso podriamos asignarla a una nueva variable
+// Incluso podríamos asignarla a una nueva variable
 const miSaludoCopia: saludoFunction = saludar;
 console.log(miSaludoCopia("Mundo desde Copia")); // Salida: Hola, Mundo desde Copia!
 ```
@@ -75,10 +75,10 @@ function restar(a: number, b: number): number {
 // TAREA: Usa solo esta variable para realizar las operaciones.
 let operacionActual: OperacionMatematica;
 
-console.log("---Calculadora Dinamica---");
+console.log("---Calculadora Dinámica---");
 // TAREA: Realiza una suma
 // TAREA: Realiza una resta
-// TAREA: Realiza una multiplicacion
+// TAREA: Realiza una multiplicación
 ```
 
 #### ==Pero antes de seguir... Arrow Functions== 
@@ -103,7 +103,7 @@ const saludo2 = (quien: string) => `Hola, ${quien}!`;
 const saludo3 = quien => `Hola, ${quien}!`;
 ```
 
-Este tipo de funciones tiene características que veremos mas adelante.
+Este tipo de funciones tiene características que veremos más adelante.
 
 #### 2. Pasar Funciones como Argumentos (Callbacks)
 Permite que una función tome otra función como "instrucción" sobre qué hacer (pasándose como parámetro).
@@ -136,9 +136,9 @@ procesarNombres(listaDeNombres, aMinusculas); // Salida: ana juan pedro
 
 Vemos que `procesarNombres` es una función de biblioteca reutilizable. No le importa cómo se transforman los nombres, solo que recibe una función que sabe hacerlo. Esto simplifica enormemente el código, ya que evitamos duplicar el bucle for y la lógica de impresión en múltiples funciones.
 
-**¿Tienen otra idea de función especifica que podamos crear?**
+**¿Tienen otra idea de función específica que podamos crear?**
 
-==**Como haríamos esto si las funciones no fueran tratadas como ciudadanos  de primera clase?**==
+==**¿Cómo haríamos esto si las funciones no fueran tratadas como ciudadanos de primera clase?**==
 Seguro sea algo como:
 ```ts
 function procesarNombresAMayusculas(nombres: string[]): void {
@@ -155,13 +155,13 @@ function procesarNombresAMinusculas(nombres: string[]): void {
 procesarNombresAMayusculas(listaDeNombres); // Salida: ANA JUAN PEDRO
 procesarNombresAMinusculas(listaDeNombres); // Salida: ana juan pedro
 ```
-``
+
 #### 3. Retornar Funciones desde otras Funciones (Closures)
 Una función también puede "fabricar" y devolver otra función. Esto es muy útil para crear funciones preconfiguradas.
 `Imagina que quieres crear funciones que multipliquen por un número específico. Podríamos tener duplicar, triplicar, etc.`
 
 ```ts
-// Esta función no devuelve un número, devuelve otra funcion!
+// Esta función no devuelve un número, ¡devuelve otra función!
 function crearMultiplicador(factor: number): (numero: number) => number {
   // La función que devolvemos "recuerda" el valor de 'factor'.
   // Esto se conoce como un 'closure'.
@@ -180,10 +180,10 @@ console.log(triplicar(5));  // Imprime: 15
 console.log(duplicar(10));  // Imprime: 20
 ```
 
-No podemos olvidar que estamos definiendo un tipo funcional como retorno de la función `crearMultiplicador`
+No podemos olvidar que estamos definiendo un tipo funcional como retorno de la función `crearMultiplicador`.
 <img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-27.png" width="600" alt="">
 
-Internamente, si usamos esta "fabrica" de la siguiente forma:
+Internamente, si usamos esta "fábrica" de la siguiente forma:
 `const duplicar = crearMultiplicador(2)`
 es como si estuviéramos devolviendo:
 ```ts
@@ -192,9 +192,9 @@ function(numero: number): number {
 }
 ```
 
-### Patron Strategy ¿Otra vez?
+### Patrón Strategy ¿Otra vez?
 
-Supongamos que tenemos un **auto-lavado** con dos tipos de servicios, **lavado standard** y **lavado premium** (cuesta mas). Les suena a **Strategy** ¿verdad?
+Supongamos que tenemos un **auto-lavado** con dos tipos de servicios, **lavado standard** y **lavado premium** (cuesta más). Les suena a **Strategy** ¿verdad?
 
 <img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-29.png" width="600" alt="">
 
@@ -233,7 +233,7 @@ class CarWash {
 }
 ```
 
-Este código funciona, pero es **innecesariamente verboso**. Hemos introducido una interfaz y dos tipos que la implementan, cada uno proporcionando un único método `wash()`. Estos tipos no son realmente important`es; la parte valiosa de nuestro código es la lógica de lavado. Este código es solo una función, por lo que podemos simplificarlo mucho si pasamos de interfaces y clases a un tipo funcional y dos implementaciones concretas.
+Este código funciona, pero es **innecesariamente verboso**. Hemos introducido una interfaz y dos tipos que la implementan, cada uno proporcionando un único método `wash()`. Estos tipos no son realmente importantes; la parte valiosa de nuestro código es la lógica de lavado. Este código es solo una función, por lo que podemos simplificarlo mucho si pasamos de interfaces y clases a un tipo funcional y dos implementaciones concretas.
 
 Podemos definir `WashingStrategy` como un tipo que representa una función que recibe un `Car` como argumento y devuelve `void` (no devuelve nada). Luego podemos implementar los dos tipos de lavados como dos funciones `standardWash()` y `premiumWash()`, ambas tomando un `Car` y devolviendo `void`. El CarWash puede seleccionar una de ellas para aplicarla a un auto determinado.
 
@@ -268,9 +268,9 @@ class CarWash {
 
 <img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-30.png" width="600" alt="">
 
-En esta implementacion tenemos menos partes. Pero las dos logran el mismo objetivo.
+En esta implementación tenemos menos partes. Pero las dos logran el mismo objetivo.
 
-**¿Entienden por que esto funciona?**
+**¿Entienden por qué esto funciona?**
 
 Es importante tener en cuenta que el patrón es el mismo: todavía estamos encapsulando una familia de algoritmos y seleccionando en tiempo de ejecución cuál usar. La diferencia está en la implementación, que las capacidades modernas nos permiten expresar más fácilmente.
 
@@ -322,7 +322,7 @@ Agrega un nuevo comportamiento "**comer**" el cual debe recibir **siempre** algu
 Implementa 3 algoritmos de comer, sabiendo que:
 - Algunos patos pueden comer todo tipo de comida.
 - El pato mallard es alérgico, por lo tanto solo puede comer granos. 
-- Existe patos de goma que no pueden comer.
+- Existen patos de goma que no pueden comer.
 El comportamiento comer también debe recibir una "cantidad", esta debe ser **opcional**. 
 ##### Planteamiento
 ```ts
@@ -574,7 +574,7 @@ rubberDuck.performEat(Food.SEED);
 
 Acá existe un detalle, y es que como TypeScript usa un **sistema de tipos estructural**, podríamos hacer algo como `mallardDuck.setFlyBehavior(muteQuack)` es decir, podemos usar un comportamiento de **quack** en donde se espera un comportamiento de **vuelo**, esto es porque tienen la **misma estructura/firma**.
 
-==**Idea para taller: Hacer una maquina de estados con funciones**==
+==**Idea para taller: Hacer una máquina de estados con funciones**==
 
 ##### ==Ejercicios==
 1. ==Modela una conexión simple que puede estar abierta o cerrada como una máquina de estados. Una conexión se abre con connect y se cierra con disconnect.==
@@ -582,7 +582,7 @@ Acá existe un detalle, y es que como TypeScript usa un **sistema de tipos estru
 
 ### **Evitar cálculos costosos con Lazy Values**
 
-La **evaluación perezosa** o **evaluación tardía** es una técnica de optimización que consiste en **retrasar un cálculo costoso** hasta el momento exacto en que se necesita su resultado, porque no siempre sera necesario realizar este calculo.
+La **evaluación perezosa** o **evaluación tardía** es una técnica de optimización que consiste en **retrasar un cálculo costoso** hasta el momento exacto en que se necesita su resultado, porque no siempre será necesario realizar este cálculo.
 
 En lugar de calcular un valor inmediatamente (lo que se conoce como evaluación "ansiosa" o "eager"), envolvemos ese cálculo en una función. Luego, pasamos esa función en lugar del valor. La función solo se ejecutará si el resultado es **realmente necesario**.
 
@@ -591,10 +591,10 @@ Esto evita desperdiciar recursos en operaciones pesadas que quizás nunca se lle
 Tenemos un **ejemplo**:
 ```ts
 class Bike {
-    // Logica de Bicicleta
+    // Lógica de Bicicleta
 }
 class Car {
-    // Logica de Carro
+    // Lógica de Carro
 }
 
 function isItRaining(): boolean {
@@ -618,8 +618,8 @@ Para llamar a `chooseMyRide()`, necesitamos suministrar un objeto `Car`, por l
 Hagamos esto de una forma **Lazy** 💤
 
 ```ts
-class Bike { /* Logica de Bicicleta */ }
-class Car { /* Logica de Carro */ }
+class Bike { /* Lógica de Bicicleta */ }
+class Car { /* Lógica de Carro */ }
 
 function isItRaining(): boolean {
 	return Math.random() < 0.5; // Simula lluvia aleatoria
@@ -644,7 +644,7 @@ A una función "normal", es decir, una que solo trabaja con argumentos y valores
 
 Cuando una función toma una función de primer orden como argumento o la devuelve como resultado, la llamamos **función de segundo orden**. Podríamos continuar esta lógica para definir funciones de "tercer orden" y así sucesivamente, pero en la práctica, agrupamos a todas las funciones que operan con otras funciones bajo un solo término: **funciones de orden superior** (higher-order functions).
 
-Acabamos de hacer esto en el ultimo ejemplo: `function chooseMyRide(bike: Bike, car: () => Car): Bike | Car {`
+Acabamos de hacer esto en el último ejemplo: `function chooseMyRide(bike: Bike, car: () => Car): Bike | Car {`
 
 Varios algoritmos útiles pueden ser implementados como funciones de orden superior, siendo los más fundamentales `map()`, `filter()` y `reduce()`. 
 
@@ -660,13 +660,13 @@ Podríamos resolver ambos casos usando un bucle for, pero nos daremos cuenta de
 let numbers: number[] = [1, 2, 3, 4, 5];
 
 let doubled: number[] = [];
-// Multiplicar por 2 cada numero
+// Multiplicar por 2 cada número
 for (const n of numbers) {
 	doubled.push(n * 2);
 }
 
 let squared: number[] = [];
-// Cuadrado de cada numero
+// Cuadrado de cada número
 for (const n of numbers) {
 	squared.push(n * n);
 }
@@ -680,7 +680,7 @@ Aunque multiplicar por dos y sacar el cuadrado son operaciones distintas, **la e
 - se aplica una función a cada uno de sus elementos.
 - Se genera un nuevo arreglo con los resultados.
 
-==**Pueden crear una función map() que pueda encapsular este comportamiento? (solo recibe números y retorna números)**==
+==**¿Pueden crear una función map() que pueda encapsular este comportamiento? (solo recibe números y retorna números)**==
 
 **Resolución**:
 ```ts
@@ -723,14 +723,14 @@ Nosotros solo tenemos que proporcionarle un arreglo de elementos y una función,
 
 Más adelante, veremos cómo podemos llevar esta idea un paso más allá para que funcione con cualquier tipo de estructura de datos, no únicamente con arreglos. Pero incluso con la implementación actual, ya tenemos una excelente abstracción para aplicar funciones a colecciones de elementos, lo que nos permite reutilizarla en una gran variedad de situaciones.
 
-Algo similar pasa con `filter()` y `reduce()`
+Algo similar pasa con `filter()` y `reduce()`.
 
 ### Referencias
 ---
 [![Covariance and Contravariance — Christopher Okhravi](https://i.ytimg.com/vi/FdFBYUQCuHQ/mqdefault.jpg)](https://www.youtube.com/watch?v=FdFBYUQCuHQ)
 
 
-**Contravarianza**: Yo soy bartender, y en la noche de hoy solo voy a ofrecer jugo de durazno. Por lo tanto quiero una licuadora que solo licue duraznos. Lamentablemente hubo una equivocacion en el pedido a la fabrica de licuadoras, y me entregaron una licuadora que licua todas las frutas. Esto es Correcto? Si! De esto se trata al contravarianza.
+**Contravarianza**: Yo soy bartender, y en la noche de hoy solo voy a ofrecer jugo de durazno. Por lo tanto quiero una licuadora que solo licue duraznos. Lamentablemente hubo una equivocación en el pedido a la fábrica de licuadoras, y me entregaron una licuadora que licua todas las frutas. ¿Esto es correcto? ¡Sí! De esto se trata la contravarianza.
 **Expectativa** (el tipo requerido): Una licuadora que **como mínimo** sepa licuar duraznos. 
 `(licuar: (fruta: Durazno) => Jugo)`
 **Realidad** (el tipo proporcionado): Una licuadora que sabe licuar **cualquier fruta**. 

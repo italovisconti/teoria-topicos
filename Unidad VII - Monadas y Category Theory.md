@@ -55,7 +55,7 @@ Piensa en una computadora, esta no "hereda" de un procesador. Una computadora **
 - Una `Casa` **TIENE** `Habitaciones`
 - Un `Estudiante` **TIENE UNA** `Dirección`
 
-Ustedes que están viendo Bases de datos, pensar de esta manera puede ser util.
+Ustedes que están viendo Bases de datos, pensar de esta manera puede ser útil.
 
 **Composición vs Herencia: Tabla Comparativa**
 

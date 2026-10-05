@@ -2,7 +2,7 @@
 > Riscutia, 2020 - Capítulo 6
 > Jansen, 2019 - Capítulo 5
 
-Ya conocemos al famoso **patron decorador**.
+Ya conocemos al famoso **patrón decorador**.
 
 <img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-16%201.png" width="600" alt="">
 
@@ -160,9 +160,9 @@ La elección entre ambos depende de la complejidad: la implementación funcional
 
 #### Closures
 
-Seguro ven algo raro con la implementacion anterior.
+Seguro ven algo raro con la implementación anterior.
 
-?Por que esto funciona? ?Como estamos guardando la instancia si estamos devolviendo funciones distintas?  ?sera que la variable instance es distinta para todas las funciones retornadas? ?Instance siempre inicia como undefined por lo tanto siempre se crea un nuevo widget... ?
+¿Por qué esto funciona? ¿Cómo estamos guardando la instancia si estamos devolviendo funciones distintas? ¿Será que la variable instance es distinta para todas las funciones retornadas? ¿Instance siempre inicia como undefined, por lo tanto siempre se crea un nuevo widget...?
 
 ```ts
 function singletonDecorator(factory: WidgetFactory): WidgetFactory {
@@ -181,9 +181,9 @@ Incluso después de que retornemos de singletonDecorator(), la variable instan
 
 **Closures:** Es una variable externa capturada dentro de un lambda. Los lenguajes de programación implementan las capturas de lambda a través de **clausuras** (closures). Una clausura es algo más que una simple función: también registra el entorno en el que la función fue creada, de modo que puede mantener un estado entre llamadas.
 
-En mi opinion la mejor definición es: Las **clausuras** (closures) son funciones que hacen referencia a variables independientes (libres). En otras palabras, la función definida en la clausura "recuerda" el entorno en el que fue creada.
+En mi opinión la mejor definición es: Las **clausuras** (closures) son funciones que hacen referencia a variables independientes (libres). En otras palabras, la función definida en la clausura "recuerda" el entorno en el que fue creada.
 
-Una clausura tiene acceso a las variables del entorno que la encierra, en un lenguaje mas técnico, el closure tiene acceso al scope de la función que la encierra.
+Una clausura tiene acceso a las variables del entorno que la encierra, en un lenguaje más técnico, el closure tiene acceso al scope de la función que la encierra.
 
 <img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-19%201.png" width="600" alt="">
 

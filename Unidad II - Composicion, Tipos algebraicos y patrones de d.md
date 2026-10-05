@@ -1,7 +1,7 @@
 > [!NOTE] Referencias
 > Riscutia, 2020 - Capítulo 3
 
-*Empezaremos la unidad revisitando los patrones de diseño que los alumnos estudiaron el semestre pasado: Singleton, Factory, Strategy, Decorator y como nuevo patron: Composite. No nos enfocaremos en los principios SOLID. Yo les dare el UML, ellos lo implementaran en TS.*
+*Empezaremos la unidad revisitando los patrones de diseño que los alumnos estudiaron el semestre pasado: Singleton, Factory, Strategy, Decorator y como nuevo patrón: Composite. No nos enfocaremos en los principios SOLID. Yo les daré el UML, ellos lo implementarán en TS.*
 ## Patrones:
 ### [Singleton](Patrones/Singleton.md)
 *Patrón de diseño creacional que nos permite asegurarnos de que una clase tenga una única instancia, a la vez que proporciona un punto de acceso global a dicha instancia.*
@@ -15,7 +15,7 @@
 *Patrón estructural que te permite añadir funcionalidades a objetos colocando estos objetos dentro de objetos encapsuladores especiales que contienen estas funcionalidades.*
 
 ---
-# Composicion y Tipos de datos algebraicos
+# Composición y tipos de datos algebraicos
 
 Las **tuplas** en TypeScript son un tipo de dato que te permite crear arrays con un **número fijo de elementos** donde **cada posición tiene un tipo específico**.
 ## ¿Qué son las tuplas?

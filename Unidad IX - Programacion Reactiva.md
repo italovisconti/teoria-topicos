@@ -48,7 +48,7 @@ A continuación, se desglosan ambos componentes:
 	- Se puede consumir manualmente llamando a `.next()` o automáticamente usando un bucle `for...of`.
 
 
-## El patron observador
+## El patrón observador
 
 "Hola Jerry, les estoy notificando a todos que la reunión del Grupo de Patrones se movió al sábado por la noche. Vamos a hablar sobre el Patrón Observador. ¡Ese patrón es el mejor! Es el MEJOR, Jerry."
 
@@ -188,9 +188,9 @@ Sabes cómo funcionan las suscripciones a periódicos o revistas:
 - Te **desuscribes** cuando ya no quieres más periódicos y dejan de ser entregados.
 - Mientras el editor se mantenga en el negocio, personas, hoteles, aerolíneas y otros negocios constantemente se suscriben y se desuscriben al periódico.
 
-**Publishers + Subscribers = Patron Observador**
+**Publishers + Subscribers = Patrón Observador**
 
-La ventaja de este patron es si conoces alguno de estos conceptos del mundo real, ya sabes como funciona el patron observador. Llamamos al editor el **SUJETO** y a los suscriptores, los **OBSERVADORES**.
+La ventaja de este patrón es que si conoces alguno de estos conceptos del mundo real, ya sabes cómo funciona el patrón observador. Llamamos al editor el **SUJETO** y a los suscriptores, los **OBSERVADORES**.
 
 <img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-8.png" width="600" alt="">
 

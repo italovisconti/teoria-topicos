@@ -1,28 +1,28 @@
 **Presentarme**.
 
-Italo Visconti, Desarrollador de software con poco tiempo de graduado pero alrededor de 3 anios de experiencia en el desarrollo de software.
+Italo Visconti, Desarrollador de software con poco tiempo de graduado pero alrededor de 3 años de experiencia en el desarrollo de software.
 
 - Me gustan las computadoras.
 - Resolver peos
-- Hacerle la vida un poco mas facil a alguien (o a mi)
-- Me gusta la computacion en la nube, de hecho me gustaria poder dar esa materia en un futuro
+- Hacerle la vida un poco más fácil a alguien (o a mí)
+- Me gusta la computación en la nube, de hecho me gustaría poder dar esa materia en un futuro
 
-Hacer que los estudiantes se presenten con: **Nombre, por que les gusta programar, si actualmente trabajan**.
+Hacer que los estudiantes se presenten con: **Nombre, por qué les gusta programar, si actualmente trabajan**.
 
-A mi lo que me gusta de programar es que solo necesitas esto :material-hand-back-right:, y para crear cosas maravillosas solo necesitas -> :material-hand-back-right:, y el unico limitante eres tu.
-no necesitas grandes maquinas, materiales, permisos. Todo depende de ti, de que tanto te esfuerces, y de lo que te imagines.
+A mí lo que me gusta de programar es que solo necesitas esto :material-hand-back-right:, y para crear cosas maravillosas solo necesitas -> :material-hand-back-right:, y el único limitante eres tú.
+No necesitas grandes máquinas, materiales, permisos. Todo depende de ti, de qué tanto te esfuerces, y de lo que te imagines.
 
-Ademas, la informatica es un campo que recompensa la curiosidad y la creatividad.
+Además, la informática es un campo que recompensa la curiosidad y la creatividad.
 
-**Rapido, diganme una idea que tengan**
+**Rápido, díganme una idea que tengan**
 
-Tantas cosas hechas por personas solas, o equipos pequenos, y ahora son mundialmente reconocidas.
+Tantas cosas hechas por personas solas, o equipos pequeños, y ahora son mundialmente reconocidas.
 
-Saben quien es el?  **FOTO DE: Linus Torvald**
+¿Saben quién es él?  **FOTO DE: Linus Torvald**
 
 > Lo que realmente disfruto de programar es que puedes decirle a la computadora exactamente qué hacer y lo hará al pie de la letra; eso no ocurre en la vida cotidiana.
 
-Ese carajo empezo a hacer linux como un hobby
+Ese carajo empezó a hacer Linux como un hobby
 
 "just a hobby, won't be big and professional like gnu"
 
@@ -32,27 +32,27 @@ Hablar de:
 
 **El uso de la IA y la importancia de siempre seguir aprendiendo**.
 
-> "Los mejores ingenieros no son quienes programan más rapido, sino quienes piensan mas a fondo."
+> "Los mejores ingenieros no son quienes programan más rápido, sino quienes piensan más a fondo."
 
 > "Las herramientas cambian, pero los principios perduran. Siempre enfócate en aprender a aprender."
 
 ---
-*Y aqui podemos hilar lo de la IA:*
+*Y aquí podemos hilar lo de la IA:*
 
-**De que te sientes orgulloso?**
+**¿De qué te sientes orgulloso?**
 
-**Ustedes se sienten motivados?** 
+**¿Ustedes se sienten motivados?** 
 
-**Ustedes consideran a la IA una herramienta? O un reemplazo...** 
+**¿Ustedes consideran a la IA una herramienta? ¿O un reemplazo...?** 
 
-Nuestra carrera (y la carrera de muchos) esta cambiando, pero no es la primera vez que ocurre un cambio de esta manera, aunque yo si pienso que esto es diferente.
+Nuestra carrera (y la carrera de muchos) está cambiando, pero no es la primera vez que ocurre un cambio de esta manera, aunque yo sí pienso que esto es diferente.
 
-Para su fortuna esto es una herramienta, porque ustedes no son programadores, son ingenieros en informatica. Peguense eso en la cabeza.
-Y esta es una herramienta que te hace 10 veces mas util
+Para su fortuna esto es una herramienta, porque ustedes no son programadores, son ingenieros en informática. Péguense eso en la cabeza.
+Y esta es una herramienta que te hace 10 veces más útil.
 
-**Venezuela** esta atrasada en el tiempo, es como si nos hubieran congelado a todos y hay DEMASIADO por hacer.
+**Venezuela** está atrasada en el tiempo, es como si nos hubieran congelado a todos y hay DEMASIADO por hacer.
 
-**Ademas,** soft skills son importantes, aprender a expresar ideas, trabajar en equipo, comprender, apoyar... (y tambien el ingles).
+**Además,** soft skills son importantes, aprender a expresar ideas, trabajar en equipo, comprender, apoyar... (y también el inglés).
 
 ---
 **Esta charla** es interesante: [Should You Still Become a Software Engineer in 2026? GitHub VP](https://www.youtube.com/watch?v=W6aOdLlEz1w)
@@ -62,26 +62,26 @@ Y esta es una herramienta que te hace 10 veces mas util
 
 > Los fundamentos son irremplazables
 
-Un punto que me gusto es que habla de hacer las cosas con proposito. el usa el ejemplo de I One Shotted a Minecraft Clone, no me importa, muestrame algo que de verdad sea util, que demuestra que estas haciendo algo con un proposito y que estas resolviendo algo. (Las apps para ver la tasa del dolar)
+Un punto que me gustó es que habla de hacer las cosas con propósito. Él usa el ejemplo de I One Shotted a Minecraft Clone, no me importa, muéstrame algo que de verdad sea útil, que demuestre que estás haciendo algo con un propósito y que estás resolviendo algo. (Las apps para ver la tasa del dólar)
 
-En la industria del software hay de todo, y cuando quieran leer opiniones de un loco, lean opiniones de un loco con trayectoria
+En la industria del software hay de todo, y cuando quieran leer opiniones de un loco, lean opiniones de un loco con trayectoria.
 
-Hay personas pragmaticas 
+Hay personas pragmáticas 
 <img src="assets/Introduccion/image-18.png" width="600" alt="">
 
-Hay personas demasiado pragmaticas<img src="assets/Introduccion/image-19.png" width="600" alt="">
+Hay personas demasiado pragmáticas<img src="assets/Introduccion/image-19.png" width="600" alt="">
 
-Hay otros poco pragmaticos
+Hay otros poco pragmáticos
 <img src="assets/Introduccion/image-20.png" width="600" alt="">
 
-Hay muy buenos enseniando
+Hay muy buenos enseñando
 <img src="assets/Introduccion/image-21.png" width="600" alt="">
 
 ---
 
-Que tiene que ver todo esto que estoy diciendo con mi materia "**Topicos especiales de programacion**", es que esto no es una materia que lo ve cualquier persona, esto de hecho, es lo que hace complicada a esta materia, porque el software mal hecho y el software bien hecho, en el 90% de los casos es indiferente para el usuario, porque esos funciona y ya. 
+¿Qué tiene que ver todo esto que estoy diciendo con mi materia "**Tópicos especiales de programación**"? Es que esta no es una materia que la ve cualquier persona, esto de hecho, es lo que hace complicada a esta materia, porque el software mal hecho y el software bien hecho, en el 90% de los casos es indiferente para el usuario, porque eso funciona y ya. 
 
-Esa aplicacion del banco que tienes en el telefono esta bien hecha? no hablo de si se ve bonita, si es responsive, si los botones estan donde deben estar. hablo de si esta bien hecha tecnicamente... No lo sabes, porque eres un usuario. **Pero** si el dia de manana trabajas en mercantil como desarrollador y te toca tocar la app, capaz y vas a querer salir corriendo de ahi. Tienes que agregar un botón nuevo para pagar con biopago, cambias una línea de código... y de la nada se cae el módulo de transferencias a terceros. 
+¿Esa aplicación del banco que tienes en el teléfono está bien hecha? No hablo de si se ve bonita, si es responsive, si los botones están donde deben estar; hablo de si está bien hecha técnicamente... No lo sabes, porque eres un usuario. **Pero** si el día de mañana trabajas en Mercantil como desarrollador y te toca tocar la app, capaz y vas a querer salir corriendo de ahí. Tienes que agregar un botón nuevo para pagar con biopago, cambias una línea de código... y de la nada se cae el módulo de transferencias a terceros. 
 
 Cualquiera puede hacer un script en Python, cualquiera puede hacer un CRUD. Pero hacer software robusto, mantenible, desacoplado y que no explote cuando las cosas crezcan y tengas a 10 personas trabajando en eso, eso es **ingeniería de verdad**. Y eso te lo da la experiencia.
 
@@ -89,25 +89,25 @@ Cualquiera puede hacer un script en Python, cualquiera puede hacer un CRUD. Pero
 
  «El que sabe, sabe» es el que no se casa ciegamente con ninguna tecnología ni con ninguna regla, sino que tiene el criterio de decir.
 
-Y esto tambien aplica cuando usen IA. La IA es maravillosa, es como si tuvieras a un profesor al lado, 24/7 pero tengan cuidado.
+Y esto también aplica cuando usen IA. La IA es maravillosa, es como si tuvieras a un profesor al lado, 24/7 pero tengan cuidado.
 
 ---
-**Cosas que me gustaria hacer en la clase:**
+**Cosas que me gustaría hacer en la clase:**
 
-**Quisiera** traer a alguien para dar una charla sobre algun tema que les guste.
+**Quisiera** traer a alguien para dar una charla sobre algún tema que les guste.
 
 **Quisiera** que sean curiosos y que no le tengan miedo a preguntar cualquier cosa.
 
 **Quisiera abrir las clases siempre con algo curioso que vea** en internet, o **hacer que las personas compartan algo** que hayan visto en la semana.
 
 ---
-**Quien cree que esta materia es inutil?**
+**¿Quién cree que esta materia es inútil?**
 
 
 ---
 Dar **plan de evaluación**.
 
-| Semana | Unidad Tematica / Evaluacion                                                                                                     | Bibliografía Sugerida                                                                                                   |
+| Semana | Unidad Temática / Evaluación                                                                                                     | Bibliografía Sugerida                                                                                                   |
 | -----: | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 |      1 | Prueba diagnóstica de OOP <br> Sistemas de tipos: nominales y estructurales <br> Tipos básicos                                   | [Riscutia, 2020] Capítulos 1 y 2 <br> [Vanderkam, 2020] Capítulos 2, 3 y 4 <br> [Freeman, 2021] Capítulos 8, 9, 10 y 11 |
 |      2 | Composición y tipos de datos algebraicos                                                                                         | [Riscutia, 2020] Capítulo 3                                                                                             |
@@ -127,17 +127,17 @@ Dar **plan de evaluación**.
 |     16 | Entrega de Notas + Revisiones                                                                                                    | FIN DEL CURSO                                                                                                           |
 
 **Quiero que despierten su creatividad**.
-Donde buscar información, lugares recomendados:
+Dónde buscar información, lugares recomendados:
 - **Texto**:
 	- FreeCodeCamp
 	- Medium
-	- Reddit (Subs de programacion)
-	- ==Leer documentacion==
+	- Reddit (Subs de programación)
+	- ==Leer documentación==
 
 - **Videos**:
-	- Computerphile en Youtube
-	- Fireship en Youtube
-	- ThePrimeagen en Youtube
-	- Tsoding en Youtube/Twitch
-	- ChristopherOkhravi en Youtube
+	- Computerphile en YouTube
+	- Fireship en YouTube
+	- ThePrimeagen en YouTube
+	- Tsoding en YouTube/Twitch
+	- ChristopherOkhravi en YouTube
 
