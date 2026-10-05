@@ -290,7 +290,7 @@ Sabiendo esto... Como definiríamos a un tipo genérico?
 
 Un tipo genérico es una función genérica, clase, interfaz, etc., que está parametrizada sobre uno o más tipos. Los tipos genéricos nos permiten escribir código general que funciona con diferentes tipos, posibilitando un **alto nivel de reutilización de código**.
 
-<img src="assets/Unidad%20V%20-%20Programacion%20Generica/image-1.png" width="700" alt="">
+<img src="assets/Unidad%20V%20-%20Programacion%20Generica/image-1.png" width="600" alt="">
 
 Los tipos genericos estan en muchisimos lados, y por eso su entendimiento es tan importante. Pensemos en algo que hacemos todos los días. ¿Qué estructuras de datos almacenen una _secuencia_ de cosas?
 

@@ -76,7 +76,7 @@ Echemos un vistazo a la aplicación de Monitoreo Climático que necesitamos entr
 2. **El objeto WeatherData:** El que rastrea los datos provenientes de la Estación Meteorológica y actualiza las pantallas.
 3. **La pantalla (display):** Lo que muestra a los usuarios las condiciones climáticas actuales.
 
-<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-2.png" width="700" alt="">
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-2.png" width="600" alt="">
 
 > **El objeto `WeatherData` fue escrito por Weather-O-Rama y sabe cómo comunicarse con la Estación Meteorológica física para obtener datos actualizados del clima.**
 
@@ -177,7 +177,7 @@ Piensa en todos esos conceptos y principios del Capítulo 1: ¿cuáles estamos v
 | **By coding to concrete implementations, we have no way to add or remove other display elements without making changes to the code.**                                         | Al programar sobre implementaciones concretas, **no tenemos forma de agregar o eliminar otros elementos de visualización** sin hacer cambios en el código.                                                    |
 | **What if we want to add or remove displays at runtime? This looks hardcoded.**                                                                                               | ¿Qué pasa si queremos agregar o eliminar pantallas en tiempo de ejecución? Esto parece **codificado rígidamente (hardcoded)**.                                                                                |
 
-<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-7.png" width="700" alt="">
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-7.png" width="600" alt="">
 
 ### Conoce el Patrón Observador
 
@@ -192,7 +192,7 @@ Sabes cómo funcionan las suscripciones a periódicos o revistas:
 
 La ventaja de este patron es si conoces alguno de estos conceptos del mundo real, ya sabes como funciona el patron observador. Llamamos al editor el **SUJETO** y a los suscriptores, los **OBSERVADORES**.
 
-<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-8.png" width="700" alt="">
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-8.png" width="600" alt="">
 
 | **Texto Original en Inglés**                                                                                       | **Traducción al Español**                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -242,7 +242,7 @@ El Patrón Observador define una **dependencia uno-a-muchos** entre objetos, de 
 
 El Patrón Observador define una **relación uno-a-muchos** entre un conjunto de objetos. Cuando el estado de un objeto cambia, **todos sus dependientes son notificados**.
 
-<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-15.png" width="700" alt="">
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-15.png" width="600" alt="">
 
 | **Texto Original en Inglés**                                                                                                                                                                                                                           | **Traducción al Español**                                                                                                                                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -271,7 +271,7 @@ Esfuérzate por conseguir diseños de acoplamiento débil entre objetos que inte
 **Ejercicio:**
 Antes de continuar, intenta esbozar las clases que necesitarás para implementar la Estación Meteorológica, incluyendo la clase `WeatherData` y sus elementos de visualización. Asegúrate de que tu diagrama muestre cómo encajan todas las piezas y también cómo otro desarrollador podría implementar su propio elemento de visualización.
 
-<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-17.png" width="700" alt="">
+<img src="assets/Unidad%20IX%20-%20Programacion%20Reactiva/image-17.png" width="600" alt="">
 
 | **Texto Original en Inglés**                                                                                                                                      | **Traducción al Español**                                                                                                                                                                              |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

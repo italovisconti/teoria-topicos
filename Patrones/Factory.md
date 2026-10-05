@@ -27,9 +27,9 @@ En código, esto significa que creas una clase `SimplePizzaFactory` que centrali
 
 El objetivo principal es **encapsular la lógica de creación de objetos**. El cliente se desacopla de la instanciación de las clases concretas, delegando esa responsabilidad a la fábrica. Facilitamos el mantenimiento y la extensibilidad.
 #### Estructura
-<img src="../assets/Patrones/image-2%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-2%201.png" width="600" alt="">
 
-<img src="../assets/Patrones/image-4%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-4%201.png" width="600" alt="">
 #### Ejemplo: Pizzeria
 ##### Planteamiento:
 **Paso 1**: orderPizza crea una Pizza concreta y la procesa.

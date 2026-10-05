@@ -4,7 +4,7 @@
 
 Ya conocemos al famoso **patron decorador**.
 
-<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-16%201.png" width="700" alt="">
+<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-16%201.png" width="600" alt="">
 
 Supongamos que tenemos una interfaz IWidgetFactory que declara un método makeWidget() que devuelve un Widget. La implementación concreta, WidgetFactory, implementa el método para instanciar nuevos objetos Widget.
 
@@ -185,6 +185,6 @@ En mi opinion la mejor definición es: Las **clausuras** (closures) son funcio
 
 Una clausura tiene acceso a las variables del entorno que la encierra, en un lenguaje mas técnico, el closure tiene acceso al scope de la función que la encierra.
 
-<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-19%201.png" width="664" alt="">
+<img src="assets/Unidad%20IV%20-%20Aplicaciones%20avanzadas%20de%20los%20T%20F/image-19%201.png" width="600" alt="">
 
 Las clausuras  solo tienen sentido si tenemos funciones de orden superior. Si no podemos devolver una función desde otra función, no hay un entorno que capturar. En ese caso, todas las funciones están en el ámbito global (global scope), que es su entorno, y pueden hacer referencia a variables globales.

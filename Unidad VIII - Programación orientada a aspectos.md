@@ -178,13 +178,13 @@ El diseño que habilita AOP (interfaces pequeñas, decorators) también hace el 
 
 ## 2. Los Principios SOLID en Profundidad
 
-<img src="assets/SOLID/00-solid-intro-jenga.webp" width="700" alt="">
+<img src="assets/SOLID/00-solid-intro-jenga.webp" width="600" alt="">
 
 Antes de refactorizar hacia AOP, debemos dominar los principios SOLID. Estos principios son la **base** que permite aplicar AOP mediante diseño.
 
 ### 2.1 Single Responsibility Principle (SRP)
 
-<img src="assets/SOLID/01-solid-srp-responsabilidad-unica.webp" width="700" alt="">
+<img src="assets/SOLID/01-solid-srp-responsabilidad-unica.webp" width="600" alt="">
 
 > *"Una clase debe tener una, y solo una, razón para cambiar."*
 > — Robert C. Martin
@@ -313,7 +313,7 @@ class ReportGenerator {
 
 ### 2.2 Open/Closed Principle (OCP)
 
-<img src="assets/SOLID/02-solid-ocp-abierto-cerrado.webp" width="700" alt="">
+<img src="assets/SOLID/02-solid-ocp-abierto-cerrado.webp" width="600" alt="">
 
 > *"Las entidades de software deben estar abiertas para extensión, pero cerradas para modificación."*
 
@@ -451,7 +451,7 @@ class DiscountCalculator {
 
 ### 2.3 Liskov Substitution Principle (LSP)
 
-<img src="assets/SOLID/03-solid-lsp-sustitucion-liskov.webp" width="700" alt="">
+<img src="assets/SOLID/03-solid-lsp-sustitucion-liskov.webp" width="600" alt="">
 
 > *"Los objetos de una superclase deben poder ser reemplazados por objetos de sus subclases sin alterar la correctitud del programa."*
 
@@ -568,7 +568,7 @@ class ReadOnlyRepository<T> implements IReadRepository<T> {
 
 ### 2.4 Interface Segregation Principle (ISP)
 
-<img src="assets/SOLID/04-solid-isp-segregacion-interfaces.webp" width="700" alt="">
+<img src="assets/SOLID/04-solid-isp-segregacion-interfaces.webp" width="600" alt="">
 
 > *"Ningún cliente debe ser forzado a depender de métodos que no usa."*
 
@@ -676,7 +676,7 @@ El beneficio es que un componente que solo necesita leer usuarios depende solo d
 
 ### 2.5 Dependency Inversion Principle (DIP)
 
-<img src="assets/SOLID/05-solid-dip-inversion-dependencias.webp" width="700" alt="">
+<img src="assets/SOLID/05-solid-dip-inversion-dependencias.webp" width="600" alt="">
 
 > *"Los módulos de alto nivel no deben depender de módulos de bajo nivel. Ambos deben depender de abstracciones."*
 

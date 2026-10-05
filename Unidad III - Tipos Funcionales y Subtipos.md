@@ -181,7 +181,7 @@ console.log(duplicar(10));  // Imprime: 20
 ```
 
 No podemos olvidar que estamos definiendo un tipo funcional como retorno de la función `crearMultiplicador`
-<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-27.png" width="700" alt="">
+<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-27.png" width="600" alt="">
 
 Internamente, si usamos esta "fabrica" de la siguiente forma:
 `const duplicar = crearMultiplicador(2)`
@@ -196,7 +196,7 @@ function(numero: number): number {
 
 Supongamos que tenemos un **auto-lavado** con dos tipos de servicios, **lavado standard** y **lavado premium** (cuesta mas). Les suena a **Strategy** ¿verdad?
 
-<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-29.png" width="613" alt="">
+<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-29.png" width="600" alt="">
 
 ```ts
 class Car {
@@ -266,7 +266,7 @@ class CarWash {
 }
 ```
 
-<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-30.png" width="675" alt="">
+<img src="assets/Unidad%20III%20-%20Tipos%20Funcionales%20y%20Subtipos/image-30.png" width="600" alt="">
 
 En esta implementacion tenemos menos partes. Pero las dos logran el mismo objetivo.
 

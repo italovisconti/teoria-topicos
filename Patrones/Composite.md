@@ -1,12 +1,12 @@
 *Patrón de diseño estructural que te permite componer objetos en estructuras de árbol y trabajar con esas estructuras como si fueran objetos individuales.*
-<img src="../assets/Patrones/image-17.png" width="640" alt="">
+<img src="../assets/Patrones/image-17.png" width="600" alt="">
 
 El Patrón Composite nos permite construir estructuras de objetos en forma de árbol que contienen tanto composiciones de objetos como objetos individuales a modo de nodos.
 En otras palabras, en la mayoría de los casos podemos ignorar las diferencias entre las composiciones de objetos y los objetos individuales.
 
 Nuevamente buscamos: **Abstracción**.
 
-<img src="../assets/Patrones/image-18.png" width="700" alt="">
+<img src="../assets/Patrones/image-18.png" width="600" alt="">
 
 Un Composite contiene componentes. Los componentes vienen en dos tipos: composite y hojas. ¿Suena recursivo? **Lo es**.
 Un Composite alberga un conjunto de hijos; esos hijos pueden ser otros composite u otras hojas.
@@ -25,10 +25,10 @@ Esto nos puede confundir, así que podríamos simplificarlo:
 ```
 
 Primero tenemos que visualizar el problema:
-<img src="../assets/Patrones/image-20.png" width="700" alt="">
+<img src="../assets/Patrones/image-20.png" width="600" alt="">
 
 Diagrama de UML
-<img src="../assets/Patrones/image-22.png" width="688" alt="">
+<img src="../assets/Patrones/image-22.png" width="600" alt="">
 
 #### Resolución
 ```ts
@@ -138,7 +138,7 @@ console.log(`Resultado: ${finalExpression.eval()}`); //1495
 4. **La clase `Operaciones` no es un verdadero compuesto:** Esta clase actúa más como una "calculadora" o una clase de utilidad que agrupa funciones. No representa una operación única en el árbol de expresión. Un diseño Composite correcto tendría clases separadas para cada operación (`Suma`, `Multiplicacion`, etc.) que implementen `Principal` y contengan referencias a sus operandos (de tipo `Principal`).
 
 2-
-<img src="../assets/Patrones/image-26.png" width="700" alt="">
+<img src="../assets/Patrones/image-26.png" width="600" alt="">
 
 La implementación es correcta y realmente cumple los requisitos del patron Composite
 

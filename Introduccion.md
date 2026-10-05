@@ -68,15 +68,15 @@ Un punto que me gusto es que habla de hacer las cosas con proposito. el usa el e
 En la industria del software hay de todo, y cuando quieran leer opiniones de un loco, lean opiniones de un loco con trayectoria
 
 Hay personas pragmaticas 
-<img src="assets/Introduccion/image-18.png" width="700" alt="">
+<img src="assets/Introduccion/image-18.png" width="600" alt="">
 
-Hay personas demasiado pragmaticas<img src="assets/Introduccion/image-19.png" width="700" alt="">
+Hay personas demasiado pragmaticas<img src="assets/Introduccion/image-19.png" width="600" alt="">
 
 Hay otros poco pragmaticos
-<img src="assets/Introduccion/image-20.png" width="654" alt="">
+<img src="assets/Introduccion/image-20.png" width="600" alt="">
 
 Hay muy buenos enseniando
-<img src="assets/Introduccion/image-21.png" width="649" alt="">
+<img src="assets/Introduccion/image-21.png" width="600" alt="">
 
 ---
 

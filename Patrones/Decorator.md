@@ -14,7 +14,7 @@ Páramo cafe ha crecido mucho en Venezuela, y como ya saben ha crecido de manera
 
 Cuando recién comenzaron su negocio, diseñaron sus clases de esta manera...
 
-<img src="../assets/Patrones/image-1%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-1%201.png" width="600" alt="">
 
 | Ubicación del Comentario                   | Comentario Original (Inglés)                                                                                                                                                              | Traducción al Español                                                                                                                                                                                    |
 | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -27,7 +27,7 @@ Aparte de tu café, también puedes pedir varios complementos o condimentos, com
 
 **Aquí está el primer intento**:
 
-<img src="../assets/Patrones/image-2%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-2%201.png" width="600" alt="">
 Cada método `cost` calcula el costo del café junto con los otros condimentos en el pedido.
 
 Es bastante obvio que Páramo ha creado una pesadilla de mantenimiento para sí mismos. **¿Qué pasa cuando el precio de la leche sube?** **¿Qué hacen cuando añaden una nueva cobertura de caramelo?** 
@@ -36,7 +36,7 @@ Es bastante obvio que Páramo ha creado una pesadilla de mantenimiento para sí 
 
 Esto es estúpido; ¿por qué necesitamos todas estas clases? ¿No podemos simplemente usar variables y herencia en la superclase para llevar un registro de los condimentos?
 
-<img src="../assets/Patrones/image-3%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-3%201.png" width="600" alt="">
 
 **Nuevos valores booleanos para cada condimento.**
 **Estos obtienen y establecen los valores booleanos para los condimentos.** (Es decir, son los métodos getters y setters).
@@ -44,7 +44,7 @@ Ahora implementaremos `cost()` en Beverage (en lugar de mantenerlo abstracto
 
 Ahora agregamos las subclases:
 
-<img src="../assets/Patrones/image-4%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-4%201.png" width="600" alt="">
 
 El `cost()` de la superclase calculará los costos de todos los condimentos, mientras que el `cost()` sobrescrito en las subclases extenderá esa funcionalidad para incluir los costos de ese tipo de bebida específica.
 Cada método `cost()` necesita calcular el costo de la bebida y luego sumar los condimentos llamando a la implementación de `cost()` de la superclase.
@@ -174,24 +174,24 @@ Bien, pero ¿cómo se "*decora*" un objeto y cómo entra en juego la **delegaci�
 
 1. Comenzamos con nuestro objeto **DarkRoast**.
 
-<img src="../assets/Patrones/image-6%201.png" width="629" alt="">
+<img src="../assets/Patrones/image-6%201.png" width="600" alt="">
 Recuerda que DarkRoast hereda de Beverage y tiene un método cost() que calcula el costo de la bebida.
 
 2. El cliente quiere **Moca**, así que creamos un objeto **Mocha** y lo envolvemos alrededor del **DarkRoast**.
 
-<img src="../assets/Patrones/image-7%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-7%201.png" width="600" alt="">
 El objeto Mocha es un decorador. Su tipo imita (refleja) al objeto que está decorando; en este caso, una Beverage (Bebida). (Con "imita", nos referimos a que es del mismo tipo.)
 Entonces, Mocha también tiene un método cost(), y a través del polimorfismo podemos tratar cualquier Beverage envuelta en Mocha como si fuera una Beverage también (porque Mocha es un subtipo de Beverage).
 
 3. El cliente también quiere **Crema Batida**, así que creamos un decorador **Whip** (Crema Batida) y envolvemos el **Mocha** con él.
 
-<img src="../assets/Patrones/image-8%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-8%201.png" width="600" alt="">
 Whip (Crema Batida) es un decorador, por lo que también imita (refleja) el tipo de DarkRoast e incluye un método cost().
 Por lo tanto, un DarkRoast envuelto en Mocha y Whip sigue siendo una Beverage (Bebida) y podemos hacer cualquier cosa con él que haríamos con un DarkRoast, incluyendo llamar a su método cost().
 
 4. Ahora es el momento de calcular el costo para el cliente. Hacemos esto llamando al método `cost()` en el decorador más externo, que es **Whip**. Whip va a delegar el cálculo del costo al objeto que decora. Y así sucesivamente.
 
-<img src="../assets/Patrones/image-9%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-9%201.png" width="600" alt="">
 
 | Paso      | Comentario Original (Inglés)                                                                   | Traducción al Español                                                                                    |
 | --------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -217,7 +217,7 @@ Los Decoradores proporcionan una alternativa flexible a la creación de subclase
 
 #### Diagrama de Clases
 
-<img src="../assets/Patrones/image-10%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-10%201.png" width="600" alt="">
 (Se parece un poco al **patron Composite**)
 
 | Ubicación del Comentario             | Comentario Original                                                                                                                                | Traducción al Español                                                                                                                                                                    |
@@ -232,7 +232,7 @@ Los Decoradores proporcionan una alternativa flexible a la creación de subclase
 
 #### Decorando Páramo...
 
-<img src="../assets/Patrones/image-11%201.png" width="700" alt="">
+<img src="../assets/Patrones/image-11%201.png" width="600" alt="">
 
 | Ubicación del Comentario                                      | Comentario Original (Inglés)                                                                                                                 | Traducción al Español                                                                                                                                                |
 | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -359,6 +359,6 @@ beverage3 = new Whip(beverage3);
 console.log(`${beverage3.getDescription()} ${beverage3.cost()}$`);
 ```
 
-<img src="../assets/Patrones/image-14%201.png" width="638" alt="">
+<img src="../assets/Patrones/image-14%201.png" width="600" alt="">
 
 
