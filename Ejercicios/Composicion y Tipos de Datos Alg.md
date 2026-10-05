@@ -6,20 +6,20 @@
 Vas a modelar las entidades para una pequeña tienda online.
 
 1.  **Producto Simple (Tupla):**
-    *   Define un tipo `ProductoTupla` que represente un producto usando una tupla. Debe contener: `[código: number, nombre: string, precio: number]`.
-    *   Crea una instancia de ejemplo para un producto.
+	*   Define un tipo `ProductoTupla` que represente un producto usando una tupla. Debe contener: `[código: number, nombre: string, precio: number]`.
+	*   Crea una instancia de ejemplo para un producto.
 
 2.  **Perfil de Usuario (Record):**
-    *   Define un tipo `Usuario` usando un `type` (esto es un Record/Product Type). Debe contener las siguientes propiedades: `id` (number), `nombre` (string), `email` (string), y `activo` (boolean).
-    *   Crea una instancia de ejemplo de un usuario.
+	*   Define un tipo `Usuario` usando un `type` (esto es un Record/Product Type). Debe contener las siguientes propiedades: `id` (number), `nombre` (string), `email` (string), y `activo` (boolean).
+	*   Crea una instancia de ejemplo de un usuario.
 
 3.  **Categoría de Producto (Enum):**
-    *   Define un `enum` llamado `CategoriaProducto` con los siguientes valores: `Electronica`, `Ropa`, `Hogar`, `Alimentos`.
-    *   Asigna los valores que prefieras (numéricos o de string).
+	*   Define un `enum` llamado `CategoriaProducto` con los siguientes valores: `Electronica`, `Ropa`, `Hogar`, `Alimentos`.
+	*   Asigna los valores que prefieras (numéricos o de string).
 
 4.  **Combinando todo:**
-    *   Crea un nuevo tipo `ProductoCompleto` (usando un `type`) que sea un Record con las siguientes propiedades: `codigo` (number), `nombre` (string), `precio` (number), y `categoria` (del tipo `CategoriaProducto`).
-    *   Crea una instancia de ejemplo de un `ProductoCompleto`.
+	*   Crea un nuevo tipo `ProductoCompleto` (usando un `type`) que sea un Record con las siguientes propiedades: `codigo` (number), `nombre` (string), `precio` (number), y `categoria` (del tipo `CategoriaProducto`).
+	*   Crea una instancia de ejemplo de un `ProductoCompleto`.
 
 #### Resolución
 ```ts
@@ -87,20 +87,20 @@ console.log(`Nuevo producto: ${tecladoMecanico.nombre}, Categoría: ${tecladoMec
 Estás construyendo una funcionalidad para procesar pagos. Un pago puede realizarse a través de tres métodos diferentes: `Tarjeta`, `PayPal` o `Efectivo`. Cada método tiene datos distintos.
 
 1.  **Define los Product Types:**
-    *   Crea un tipo `PagoTarjeta` que contenga: `tipo` (un string literal `'tarjeta'`), `numeroTarjeta` (string), y `cvv` (string).
-    *   Crea un tipo `PagoPayPal` que contenga: `tipo` (un string literal `'paypal'`), y `email` (string).
-    *   Crea un tipo `PagoEfectivo` que contenga: `tipo` (un string literal `'efectivo'`), y `montoEntregado` (number).
+	*   Crea un tipo `PagoTarjeta` que contenga: `tipo` (un string literal `'tarjeta'`), `numeroTarjeta` (string), y `cvv` (string).
+	*   Crea un tipo `PagoPayPal` que contenga: `tipo` (un string literal `'paypal'`), y `email` (string).
+	*   Crea un tipo `PagoEfectivo` que contenga: `tipo` (un string literal `'efectivo'`), y `montoEntregado` (number).
 
 2.  **Crea el Sum Type:**
-    *   Define un tipo `MetodoPago` que sea una unión de `PagoTarjeta`, `PagoPayPal` y `PagoEfectivo`. Este es tu Sum Type.
+	*   Define un tipo `MetodoPago` que sea una unión de `PagoTarjeta`, `PagoPayPal` y `PagoEfectivo`. Este es tu Sum Type.
 
 3.  **Implementa una función de procesamiento:**
-    *   Escribe una función `procesarPago(pago: MetodoPago)` que reciba un objeto del tipo `MetodoPago`.
-    *   Dentro de la función, utiliza un `switch` sobre la propiedad `tipo` (el discriminador) para determinar qué tipo de pago se está procesando.
-    *   La función debe imprimir un mensaje descriptivo según el método de pago. Por ejemplo:
-        *   Para tarjeta: `"Procesando pago con tarjeta que termina en XXXX..."` (muestra los últimos 4 dígitos).
-        *   Para PayPal: `"Procesando pago con PayPal desde el email xxx@yyy.com..."`
-        *   Para efectivo: `"Procesando pago en efectivo. Monto entregado: $XX.XX"`
+	*   Escribe una función `procesarPago(pago: MetodoPago)` que reciba un objeto del tipo `MetodoPago`.
+	*   Dentro de la función, utiliza un `switch` sobre la propiedad `tipo` (el discriminador) para determinar qué tipo de pago se está procesando.
+	*   La función debe imprimir un mensaje descriptivo según el método de pago. Por ejemplo:
+		*   Para tarjeta: `"Procesando pago con tarjeta que termina en XXXX..."` (muestra los últimos 4 dígitos).
+		*   Para PayPal: `"Procesando pago con PayPal desde el email xxx@yyy.com..."`
+		*   Para efectivo: `"Procesando pago en efectivo. Monto entregado: $XX.XX"`
 
 ```
 // 1. Define los Product Types
@@ -205,22 +205,22 @@ function manejarRespuestaAPI(respuesta: any) {
 **Tu Tarea:**
 
 1.  **Modela los Datos con Tipos Algebraicos:**
-    *   Crea un tipo `Usuario` (Product Type) para los datos del usuario: `{ id: number; nombre: string; email: string }`.
-    *   Crea un tipo `RespuestaExitosa` (Product Type) que contenga: `{ tipo: 'exito'; datos: Usuario }`.
-    *   Crea un tipo `RespuestaError` (Product Type) que contenga: `{ tipo: 'error'; mensaje: string }`.
-    *   Crea un tipo `RespuestaAPI` (Sum Type) que sea la unión de `RespuestaExitosa` y `RespuestaError`.
-    *   Crea un tipo `ResultadoPeticion` (Sum Type) que represente el resultado completo de la llamada: `RespuestaAPI | { tipo: 'peticion_fallida' }`.
+	*   Crea un tipo `Usuario` (Product Type) para los datos del usuario: `{ id: number; nombre: string; email: string }`.
+	*   Crea un tipo `RespuestaExitosa` (Product Type) que contenga: `{ tipo: 'exito'; datos: Usuario }`.
+	*   Crea un tipo `RespuestaError` (Product Type) que contenga: `{ tipo: 'error'; mensaje: string }`.
+	*   Crea un tipo `RespuestaAPI` (Sum Type) que sea la unión de `RespuestaExitosa` y `RespuestaError`.
+	*   Crea un tipo `ResultadoPeticion` (Sum Type) que represente el resultado completo de la llamada: `RespuestaAPI | { tipo: 'peticion_fallida' }`.
 
 2.  **Crea Funciones de "Parseo" Seguras:**
-    *   Escribe una función `parsearRespuesta(respuesta: any): ResultadoPeticion` que reciba la respuesta cruda de la API (`any`) y la transforme en tu modelo de datos seguro (`ResultadoPeticion`).
-    *   Esta función debe validar la estructura de la respuesta y devolver el tipo correcto. Por ejemplo:
-        *   Si `respuesta` es `null` o `undefined`, devuelve `{ tipo: 'peticion_fallida' }`.
-        *   Si `respuesta.status === 200` y `respuesta.data` existe, devuelve un objeto `RespuestaExitosa`.
-        *   Si `respuesta.status` es 4xx o 5xx, extrae el mensaje de error (de `error` o `errorMsg`) y devuelve un objeto `RespuestaError`.
+	*   Escribe una función `parsearRespuesta(respuesta: any): ResultadoPeticion` que reciba la respuesta cruda de la API (`any`) y la transforme en tu modelo de datos seguro (`ResultadoPeticion`).
+	*   Esta función debe validar la estructura de la respuesta y devolver el tipo correcto. Por ejemplo:
+		*   Si `respuesta` es `null` o `undefined`, devuelve `{ tipo: 'peticion_fallida' }`.
+		*   Si `respuesta.status === 200` y `respuesta.data` existe, devuelve un objeto `RespuestaExitosa`.
+		*   Si `respuesta.status` es 4xx o 5xx, extrae el mensaje de error (de `error` o `errorMsg`) y devuelve un objeto `RespuestaError`.
 
 3.  **Refactoriza la Función Principal:**
-    *   Re-escribe `manejarRespuestaAPI` para que ahora reciba un parámetro del tipo `ResultadoPeticion`.
-    *   Usa un `switch` (o `if/else`) sobre la propiedad `tipo` para manejar cada caso de forma segura y explícita, sin riesgo de acceder a propiedades que no existen.
+	*   Re-escribe `manejarRespuestaAPI` para que ahora reciba un parámetro del tipo `ResultadoPeticion`.
+	*   Usa un `switch` (o `if/else`) sobre la propiedad `tipo` para manejar cada caso de forma segura y explícita, sin riesgo de acceder a propiedades que no existen.
 
 ```
 // 1. Modelado de Datos

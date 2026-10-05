@@ -34,18 +34,18 @@ A continuación, se desglosan ambos componentes:
 
 - **A. El Patrón Observer (El Observador):**
 
-    - Se basa en una relación de productor-consumidor (Push).
-    - Existe un **Productor** que gestiona una lista de suscriptores (**Listeners**).
-    - Cuando el Productor genera un mensaje, invoca el método `notify`, el cual recorre la lista y ejecuta el método `update` de cada Listener. 
-    - _En resumen:_ El productor "empuja" (push) los datos a los oyentes.
+	- Se basa en una relación de productor-consumidor (Push).
+	- Existe un **Productor** que gestiona una lista de suscriptores (**Listeners**).
+	- Cuando el Productor genera un mensaje, invoca el método `notify`, el cual recorre la lista y ejecuta el método `update` de cada Listener. 
+	- _En resumen:_ El productor "empuja" (push) los datos a los oyentes.
 
 - **B. El Patrón Iterator (El Iterador):**
     
-    - Es necesario para entender cómo funcionan las secuencias.
-    - Se basa en extraer datos bajo demanda (Pull).
-    - El código muestra el uso de **Generadores** (`function*`) para crear un iterador.
-    - El iterador devuelve un objeto con `{ value, done }`.
-    - Se puede consumir manualmente llamando a `.next()` o automáticamente usando un bucle `for...of`.
+	- Es necesario para entender cómo funcionan las secuencias.
+	- Se basa en extraer datos bajo demanda (Pull).
+	- El código muestra el uso de **Generadores** (`function*`) para crear un iterador.
+	- El iterador devuelve un objeto con `{ value, done }`.
+	- Se puede consumir manualmente llamando a `.next()` o automáticamente usando un bucle `for...of`.
 
 
 ## El patron observador

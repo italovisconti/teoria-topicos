@@ -31,8 +31,8 @@ Un paradigma viene definido por muchísimas cosas, como por ejemplo:
 - **Manejo del Estado:** ¿Cómo se gestiona el estado de la aplicación? ¿Los datos son **inmutables** (no pueden cambiar una vez creados), como se prefiere en la programación funcional, o **mutables** (pueden cambiar en cualquier momento), como es común en la programación imperativa?
 - **Abstracción y Encapsulamiento:** ¿Qué herramientas ofrece el paradigma para ocultar la complejidad?
 - **Sistema de Tipos (Typing):** ¿Cómo se manejan los tipos de datos?
-    - **Estático vs. Dinámico:** ¿Se comprueban los tipos en tiempo de compilación (estático, como en Java o C#) o en tiempo de ejecución (dinámico, como en Python o JavaScript)?
-    - **Fuerte vs. Débil:** ¿Cuán estricto es el sistema con las conversiones de tipo? Un tipado fuerte (como en Python) previene operaciones entre tipos incompatibles (ej. `"hola" + 5`), mientras que uno débil (como en JavaScript) intentará hacer una conversión (`"5" + 5` resulta en `"55"`).
+	- **Estático vs. Dinámico:** ¿Se comprueban los tipos en tiempo de compilación (estático, como en Java o C#) o en tiempo de ejecución (dinámico, como en Python o JavaScript)?
+	- **Fuerte vs. Débil:** ¿Cuán estricto es el sistema con las conversiones de tipo? Un tipado fuerte (como en Python) previene operaciones entre tipos incompatibles (ej. `"hola" + 5`), mientras que uno débil (como en JavaScript) intentará hacer una conversión (`"5" + 5` resulta en `"55"`).
 
 ### Tema 2 — Imperativo
 
@@ -54,9 +54,9 @@ El lenguaje **procedural** es como una **variación o "hijo" del imperativo**.
 El programador **no define cómo se hacen las cosas** (como en los lenguajes imperativos), sino que **define qué se hace**. Le dices al chef lo que quieres, y el se encarga de prepararlo.
 Expresiones en ves de sentencias.
 - Una **sentencia** es una acción que se ejecuta. No devuelve un valor. En imperativo, un programa es una secuencia de sentencias que cambian el estado global.    
-    - Ej: `for`, `if`, `let x = 5;` (en muchos contextos, la asignación es una sentencia).
+	- Ej: `for`, `if`, `let x = 5;` (en muchos contextos, la asignación es una sentencia).
 - Una **expresión** es una pieza de código que se evalúa y **produce un valor**. En el mundo declarativo, los programas se construyen componiendo expresiones.
-    - Ej: `2 + 3` (se evalúa a `5`), `miFuncion(x)` (se evalúa al valor que retorna la función), `x > 5` (se evalúa a `true` o `false`).
+	- Ej: `2 + 3` (se evalúa a `5`), `miFuncion(x)` (se evalúa al valor que retorna la función), `x > 5` (se evalúa a `true` o `false`).
     
 	<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Declarativo.png" width="600" alt="">
 
@@ -97,16 +97,16 @@ Aquí es donde podemos ver claramente las **características propias del paradig
     Las lambdas son funciones que normalmente se definen “en línea” sin nombre. En JS/TS se usan mucho como callbacks y como argumento de funciones de orden superior (por ejemplo map, filter, reduce).
 
 - **Sintaxis básica (TypeScript)**:
-    - Parámetro simple y retorno implícito: `(x: number) => x * 2`
-    - Múltiples parámetros: `(a: number, b: number) => a + b`
-    - Cuerpo con varias líneas: `(x: number) => { const r = x * 2; return r; }`
-    - Con tipos: `(s: string): number => s.length`
+	- Parámetro simple y retorno implícito: `(x: number) => x * 2`
+	- Múltiples parámetros: `(a: number, b: number) => a + b`
+	- Cuerpo con varias líneas: `(x: number) => { const r = x * 2; return r; }`
+	- Con tipos: `(s: string): number => s.length`
 
 - **Propiedades importantes**:    
-    - Son concisas y se usan inline.
-    - Las arrow functions no tienen su propio this/arguments (útil para evitar rebinds).
-    - Pueden ser puras o impuras, dependiendo de si usan o modifican estado externo.
-    - Permiten crear closures: funciones que “recuerdan” variables del contexto donde se crearon.
+	- Son concisas y se usan inline.
+	- Las arrow functions no tienen su propio this/arguments (útil para evitar rebinds).
+	- Pueden ser puras o impuras, dependiendo de si usan o modifican estado externo.
+	- Permiten crear closures: funciones que “recuerdan” variables del contexto donde se crearon.
 
 Se dan cuenta? Estoy seguro que esta no es la primera vez que ven este tipo de funciones.
 
@@ -199,8 +199,8 @@ La orientación a objetos concibe el sistema como un conjunto de entidades (los 
 
 **Relaciones:**
 - **Herencia:** La relación "es un". Una `Subclase` hereda todo lo público y protegido de su `Superclase`. La flecha (un triángulo) apunta siempre hacia la clase más general (el padre).
- - **Realización:** La relación "implementa un". Una clase concreta provee el código para los métodos definidos en una `Interfaz`. La flecha es como la de herencia, pero con línea punteada.
- - **Asociación:** La relación "usa un" o "tiene un" de forma más general. Indica que los objetos de dos clases se relacionan entre sí. Puede ser unidireccional (una clase conoce a la otra) o bidireccional (ambas se conocen). Aquí es donde se especifica la **cardinalidad** (`1`, `*`, `0..1`).
+- **Realización:** La relación "implementa un". Una clase concreta provee el código para los métodos definidos en una `Interfaz`. La flecha es como la de herencia, pero con línea punteada.
+- **Asociación:** La relación "usa un" o "tiene un" de forma más general. Indica que los objetos de dos clases se relacionan entre sí. Puede ser unidireccional (una clase conoce a la otra) o bidireccional (ambas se conocen). Aquí es donde se especifica la **cardinalidad** (`1`, `*`, `0..1`).
 - **Agregación:** Un tipo especial de asociación que representa una relación "todo/parte". El "todo" _tiene_ "partes", pero las partes pueden existir sin el todo. (Ej: Un `Equipo` tiene `Jugadores`, pero si el equipo se disuelve, los jugadores siguen existiendo). Se representa con un rombo blanco.
 - **Composición:** Una agregación más fuerte. El "todo" _es dueño_ de las "partes". Si el "todo" se destruye, las partes también. (Ej: Una `Factura` se compone de `LineasDeFactura`. Si borras la factura, las líneas no tienen sentido por sí solas). Se representa con un rombo negro.
 - **Dependencia:** La relación más débil. Una clase "depende" de otra si la usa, por ejemplo, como un parámetro en un método. Un cambio en la clase de la que se depende puede requerir un cambio en la que depende. Se representa con una flecha punteada.
@@ -282,8 +282,8 @@ Y por eso ofrece mecanismos para **transformar errores de ejecución en errores 
 	2. **Y lo solucionamos con el Contrato Explícito**, al especificar `scriptAt(s: string)`, el contrato se vuelve explícito y verificable estáticamente. El compilador o _type checker_ puede ahora validar todas las llamadas a la función contra este contrato. Cualquier violación, como `scriptAt(42)`, se convierte en un error de compilación, impidiendo que el código incorrecto sea desplegado. Se traslada el fallo de un entorno impredecible (producción) a uno controlado (desarrollo).
 
 	3. **Reducimos el Espacio de Estados**, el "espacio de estados" de un programa es el producto cartesiano de los dominios de todas sus variables activas. Un estado "malo" o inválido es una combinación de valores que conduce a un comportamiento indefinido o a un error.
-	    - Un tipo como `any` tiene un dominio casi infinito, permitiendo un espacio de estados enorme y, por tanto, un gran número de posibles estados inválidos.
-	    - Al aplicar un tipo estricto como `string`, se **restringe drásticamente el dominio** de la variable. 
+		- Un tipo como `any` tiene un dominio casi infinito, permitiendo un espacio de estados enorme y, por tanto, un gran número de posibles estados inválidos.
+		- Al aplicar un tipo estricto como `string`, se **restringe drásticamente el dominio** de la variable. 
 	    
 		<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/image%201.png" width="600" alt="">
 

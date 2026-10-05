@@ -599,9 +599,9 @@ npm run test --workspaces
    ```
 
 3. **Separa dependencias** correctamente:
-   - `dependencies`: Lo que va a producción
-   - `devDependencies`: Herramientas de desarrollo
-   - `peerDependencies`: Para librerías compartidas
+	- `dependencies`: Lo que va a producción
+	- `devDependencies`: Herramientas de desarrollo
+	- `peerDependencies`: Para librerías compartidas
 
 4. **Audita seguridad** regularmente:
    ```bash

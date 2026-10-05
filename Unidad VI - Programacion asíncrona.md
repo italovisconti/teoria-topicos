@@ -26,13 +26,13 @@ Aquí es donde brilla la programación asíncrona. Nos permite decirle al progra
 Hay tres razones principales para incorporar la programación asíncrona en sus proyectos:
 
 1.  **Mejor Rendimiento (General)**
-    * Ojo, esto es clave: una tarea asíncrona **no se ejecuta más rápido** por sí sola. La petición a la API va a tardar lo mismo. La ganancia está en que la aplicación puede hacer **más cosas en el mismo periodo de tiempo**. Al no esperar, mejoramos el rendimiento general (*throughput*) de todo el sistema.
+	* Ojo, esto es clave: una tarea asíncrona **no se ejecuta más rápido** por sí sola. La petición a la API va a tardar lo mismo. La ganancia está en que la aplicación puede hacer **más cosas en el mismo periodo de tiempo**. Al no esperar, mejoramos el rendimiento general (*throughput*) de todo el sistema.
 
 2.  **Mejor Uso de los Recursos**
-    * Esto se conecta con lo que ven en Sistemas Operativos. La programación asíncrona utiliza operaciones "no bloqueantes". Esto asegura que su CPU no esté "de brazos cruzados" simplemente esperando que la red o la base de datos respondan. En lugar de estar ocioso, el procesador puede dedicarse a otras tareas, aprovechando al máximo su capacidad.
+	* Esto se conecta con lo que ven en Sistemas Operativos. La programación asíncrona utiliza operaciones "no bloqueantes". Esto asegura que su CPU no esté "de brazos cruzados" simplemente esperando que la red o la base de datos respondan. En lugar de estar ocioso, el procesador puede dedicarse a otras tareas, aprovechando al máximo su capacidad.
 
 3.  **Mejor Experiencia de Usuario (UX)**
-    * A nadie le gusta mirar un ícono de "cargando" que no desaparece. La programación asíncrona es la base de una experiencia de usuario fluida y receptiva. Permite que el usuario siga interactuando con la aplicación (como hacer scroll o llenar un formulario) mientras las tareas pesadas se manejan "tras bastidores".
+	* A nadie le gusta mirar un ícono de "cargando" que no desaparece. La programación asíncrona es la base de una experiencia de usuario fluida y receptiva. Permite que el usuario siga interactuando con la aplicación (como hacer scroll o llenar un formulario) mientras las tareas pesadas se manejan "tras bastidores".
 
 ---
 
