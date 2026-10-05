@@ -58,7 +58,7 @@ Expresiones en ves de sentencias.
 - Una **expresión** es una pieza de código que se evalúa y **produce un valor**. En el mundo declarativo, los programas se construyen componiendo expresiones.
 	- Ej: `2 + 3` (se evalúa a `5`), `miFuncion(x)` (se evalúa al valor que retorna la función), `x > 5` (se evalúa a `true` o `false`).
     
-	<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Declarativo.png" width="600" alt="">
+<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Declarativo.png" width="600" alt="">
 
 El mejor **ejemplo**, SQL.
 - Tú no defines cómo se accede a la tabla ni el orden en que se deben hacer los cálculos para obtener un resultado.
@@ -275,7 +275,7 @@ Y por eso ofrece mecanismos para **transformar errores de ejecución en errores 
 
 - **Correctitud:**
 	
-	<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Correctitud-2.png" width="600" alt="">
+<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Correctitud-2.png" width="600" alt="">
 
 	1. **Podemos tener problemas con el Contrato Implícito**, cuando se usa un tipo permisivo como `any` (o en lenguajes no tipados), el contrato (o la firma) de una función es implícito. El código `scriptAt(s: any)` es sintácticamente válido, pero semánticamente asume que `s` tendrá un método `.indexOf()`. Esta suposición no se verifica hasta el tiempo de ejecución, lo que introduce una latencia para el descubrimiento de errores. Si se pasa un `number`, **el programa falla en producción, no durante el desarrollo**.
     
@@ -285,12 +285,12 @@ Y por eso ofrece mecanismos para **transformar errores de ejecución en errores 
 		- Un tipo como `any` tiene un dominio casi infinito, permitiendo un espacio de estados enorme y, por tanto, un gran número de posibles estados inválidos.
 		- Al aplicar un tipo estricto como `string`, se **restringe drásticamente el dominio** de la variable. 
 	    
-		<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/image%201.png" width="600" alt="">
+<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/image%201.png" width="600" alt="">
 
 - **Inmutabilidad:**
 	Una vez que le das un valor a algo, no se puede cambiar jamás.
 
-	<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Inmutabilidad.png" width="600" alt="">
+<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Inmutabilidad.png" width="600" alt="">
 
 	1. **Simplificamos la concurrencia**, evitando que multiples proceso o hilos puedan modificar un dato.
 	2. **Aumentamos la predictibilidad**, porque las funciones que reciben datos inmutables, solo pueden producir nuevos datos, y no se modifican los originales.
@@ -304,20 +304,20 @@ Y por eso ofrece mecanismos para **transformar errores de ejecución en errores 
 	
 	Podemos tomar como **ejemplo** a una **máquina expendedora**: tú solo puedes pulsar botones (interfaz pública). No puedes abrirla y meter la mano para cambiar la lógica interna (estado privado). El fabricante garantiza “nunca entrega producto sin pago” porque nadie externo puede manipular directamente los engranajes.
 	
-	<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Encapsulacion.png" width="600" alt="">
+<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Encapsulacion.png" width="600" alt="">
 
 - **Componibilidad:**
 	De esta manera aislamos el **Que** del **Como**
-	<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Componibilidad1.png" width="600" alt="">
+<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Componibilidad1.png" width="600" alt="">
 	El truco es darse cuenta de que la **condición** (`n < 0` o `s.length === 1`) es un "trozo de lógica" que podemos pasar como si fuera un dato más. En JavaScript/TypeScript, las funciones son **ciudadanos de primera clase**, así que podemos hacer exactamente eso.
-	<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Componibilidad2.png" width="600" alt="">
+<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Componibilidad2.png" width="600" alt="">
 
 	**Aislamos el Algoritmo, Parametrizamos el Comportamiento, facilitamos la Reutilizacion y Composición**
 	
 - **Legibilidad:**
 	**El código se lee mucho más de lo que se escribe**. Los tipos son la forma más eficaz de hacer que el código se autodocumente, porque a diferencia de un comentario, el compilador los verifica.
 
-	<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Legibilidad.png" width="600" alt="">
+<img src="assets/Unidad%20I%20-%20Paradigmas%20de%20Programaci%C3%B3n/Legibilidad.png" width="600" alt="">
 
 	**Un tipo bien definido es un comentario que el compilador te obliga a mantener actualizado**
 
