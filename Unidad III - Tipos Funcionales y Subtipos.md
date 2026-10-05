@@ -316,7 +316,7 @@ console.log(check(5, isEven));      // false (5 no es par)
 console.log(check(10, isPositive)); // true (10 es positivo)
 console.log(check(-3, isPositive)); // false (-3 no es positivo)
 ```
-##### Ejercicio``
+##### Ejercicio
 Convierte el ejercicio de **Duck en un Strategy Funcional**. 
 Agrega un nuevo comportamiento "**comer**" el cual debe recibir **siempre** alguna comida (solo existen 3 tipos de comida: **grano, pan, semilla**). 
 Implementa 3 algoritmos de comer, sabiendo que:
