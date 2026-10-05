@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo-ucab.png" alt="UCAB — Universidad Católica Andrés Bello" width="420">
+</p>
+
 # Teoría — Tópicos Especiales de Programación
 
 Apuntes de la asignatura **Tópicos Especiales de Programación** (UCAB).
