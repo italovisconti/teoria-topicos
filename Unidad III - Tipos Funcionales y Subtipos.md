@@ -729,7 +729,6 @@ Algo similar pasa con `filter()` y `reduce()`
 ---
 [![Covariance and Contravariance — Christopher Okhravi](https://i.ytimg.com/vi/FdFBYUQCuHQ/mqdefault.jpg)](https://www.youtube.com/watch?v=FdFBYUQCuHQ)
 
-> 🎥 Covariance and Contravariance — Christopher Okhravi
 
 **Contravarianza**: Yo soy bartender, y en la noche de hoy solo voy a ofrecer jugo de durazno. Por lo tanto quiero una licuadora que solo licue duraznos. Lamentablemente hubo una equivocacion en el pedido a la fabrica de licuadoras, y me entregaron una licuadora que licua todas las frutas. Esto es Correcto? Si! De esto se trata al contravarianza.
 **Expectativa** (el tipo requerido): Una licuadora que **como mínimo** sepa licuar duraznos. 

@@ -83,7 +83,7 @@ class ChocolateBoiler {
 }
 ```
 ##### Resuelto:
-%% La idea es “asegurar una sola caldera” en toda la app. Dos instancias permitirían estados contradictorios (una cree que está vacía mientras la otra hierve), así que centralizamos el estado en un único objeto global controlado.
+<!-- La idea es “asegurar una sola caldera” en toda la app. Dos instancias permitirían estados contradictorios (una cree que está vacía mientras la otra hierve), así que centralizamos el estado en un único objeto global controlado.
 
 ```ts
 class ChocolateBoiler {
@@ -116,4 +116,4 @@ class ChocolateBoiler {
   // resto del codigo...
 }
 ``` 
-%%
+-->

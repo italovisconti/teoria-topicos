@@ -128,7 +128,7 @@ orderPizza("veggie");
 Encapsulamos al culpable de estas modificaciones mediante una **Fabrica**.
 La función de `orderPizza()` debe ser un método de una clase `PizzaStore`
 
-%% 
+<!-- 
 ```ts
 // clases de pizzas...
 
@@ -166,4 +166,4 @@ class PizzaStore {
 	}
 }
 ```
- %%
+ -->

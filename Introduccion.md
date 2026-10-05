@@ -30,7 +30,6 @@ Ese carajo empezo a hacer linux como un hobby
 Hablar de:
 [![Learning Software Engineering During the Era of AI | Raymond Fu | TEDxCSTU — TEDx Talks](https://i.ytimg.com/vi/w4rG5GY9IlA/mqdefault.jpg)](https://www.youtube.com/watch?v=w4rG5GY9IlA)
 
-> 🎥 Learning Software Engineering During the Era of AI | Raymond Fu | TEDxCSTU — TEDx Talks
 **El uso de la IA y la importancia de siempre seguir aprendiendo**.
 
 > "Los mejores ingenieros no son quienes programan más rapido, sino quienes piensan mas a fondo."

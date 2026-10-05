@@ -5,7 +5,10 @@
 # Teoría — Tópicos Especiales de Programación
 
 Apuntes de la asignatura **Tópicos Especiales de Programación** (UCAB).
-Notas de clase por unidad, con material de apoyo y diagramas.
+Notas de clase por unidad, con material de apoyo, diagramas y ejemplos de código.
+
+El material **práctico** (guías, talleres y resoluciones) vive en el repositorio
+aparte: **[Guias-Practicas-Topicos](https://github.com/italovisconti/Guias-Practicas-Topicos)**.
 
 ## Unidades
 
@@ -36,3 +39,8 @@ Notas de clase por unidad, con material de apoyo y diagramas.
 - [Manejadores de Paquetes](Unidades%20Adicionales/Unidad%20Adicional%20-%20Manejadores%20de%20Paquetes.md)
 - [npm](Unidades%20Adicionales/Unidad%20Adicional%20-%20npm.md)
 - [Composicion y Tipos de Datos Alg](Ejercicios/Composicion%20y%20Tipos%20de%20Datos%20Alg.md)
+
+## Licencia
+
+Contenido bajo licencia [CC BY-NC 4.0](LICENSE): puedes compartirlo y adaptarlo
+dando el crédito correspondiente, sin usos comerciales.

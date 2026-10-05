@@ -12,7 +12,7 @@ Un **gestor de paquetes** (package manager) es una herramienta que:
 
 Las dependencias pueden volverse complicadas rápidamente, así que tener una herramienta que gestione ese caos es esencial.
 
-> [!INFO] npm y Yarn
+> [!NOTE] npm y Yarn
 > **npm** y **Yarn** son los gestores de paquetes más usados para JavaScript/Node.js. Hacen esencialmente lo mismo —pueden usar cualquiera de los dos. En este curso usaremos **npm** porque viene incluido con Node.js.
 
 ---
