@@ -1,0 +1,5 @@
+# MkDocs (fuentes generadas por Makefile / workflow)
+.site-src/
+site/
+_site/
+__pycache__/

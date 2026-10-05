@@ -1,0 +1,75 @@
+site_name: Teoría — Tópicos Especiales de Programación
+site_url: https://italovisconti.github.io/teoria-topicos/
+site_description: Apuntes de la asignatura Tópicos Especiales de Programación (UCAB)
+docs_dir: .site-src
+
+theme:
+  name: material
+  language: es
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.snippets:
+      base_path: .
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang: es
+  - callouts
+
+exclude_docs: |
+  README.md
+
+nav:
+  - Inicio: index.md
+  - Fundamentos:
+      - Introduccion: Introduccion.md
+      - Unidad 0.I - Desarrollo Web: "Unidad 0.I - Desarrollo Web.md"
+      - Unidad 0.II - Fundamentos-POO: "Unidad 0.II - Fundamentos-POO.md"
+  - Unidades:
+      - Unidad I - Paradigmas de Programación: "Unidad I - Paradigmas de Programación.md"
+      - Unidad II - Composición y patrones: "Unidad II - Composicion, Tipos algebraicos y patrones de d.md"
+      - Unidad III - Tipos Funcionales y Subtipos: "Unidad III - Tipos Funcionales y Subtipos.md"
+      - Unidad IV - Aplicaciones avanzadas: "Unidad IV - Aplicaciones avanzadas de los T F.md"
+      - Unidad V - Programación Genérica: "Unidad V - Programacion Generica.md"
+      - Unidad VI - Programación asíncrona: "Unidad VI - Programacion asíncrona.md"
+      - Unidad VII - Mónadas y Category Theory: "Unidad VII - Monadas y Category Theory.md"
+      - Unidad VIII - Programación orientada a aspectos: "Unidad VIII - Programación orientada a aspectos.md"
+      - Unidad IX - Programación Reactiva: "Unidad IX - Programacion Reactiva.md"
+      - Unidad X - Metaprogramación: "Unidad X - Metaprogramacion.md"
+  - Patrones de diseño:
+      - Composite: Patrones/Composite.md
+      - Decorator: Patrones/Decorator.md
+      - Factory: Patrones/Factory.md
+      - Singleton: Patrones/Singleton.md
+      - Strategy: Patrones/Strategy.md
+  - Material adicional:
+      - Manejadores de Paquetes: "Unidades Adicionales/Unidad Adicional - Manejadores de Paquetes.md"
+      - npm: "Unidades Adicionales/Unidad Adicional - npm.md"
+      - Ejercicios (Composición y tipos): "Ejercicios/Composicion y Tipos de Datos Alg.md"
