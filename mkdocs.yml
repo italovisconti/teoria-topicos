@@ -58,6 +58,7 @@ plugins:
   - search:
       lang: es
   - callouts
+  - glightbox
 
 exclude_docs: |
   README.md

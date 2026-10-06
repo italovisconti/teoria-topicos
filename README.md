@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo-ucab.png" alt="UCAB — Universidad Católica Andrés Bello" width="420">
+  <img src="assets/logo-ucab.png" alt="UCAB — Universidad Católica Andrés Bello" width="420" class="off-glb">
 </p>
 
 # Teoría — Tópicos Especiales de Programación
