@@ -73,7 +73,7 @@ También **eliminamos los métodos** `fly()` y `quack()` de la clase `Duck`
 Por ultimo, **añadimos** dos nuevos métodos, los cuales serán **Setters**, que permiten cambiar los comportamientos de `fly` y `quack` en tiempo de ejecucion. `setFlyBehavior()` y `setQuackBehavior()`
 
 Por ultimo tenemos algo como:
-<img src="../assets/Patrones/strategy-13.png" width="600" alt="">
+<img src="../assets/Patrones/strategy-14.png" width="600" alt="">
 
 Hemos empezado a describir las cosas de manera **un poco diferente**. En lugar de pensar en los comportamientos del `Duck` como un conjunto de comportamientos, empezaremos a verlos como una **familia de algoritmos**. Piénsalo: en el diseño del juego, los algoritmos representan cosas que haría un pato (distintas formas de `fly` o  `quack`).
 
