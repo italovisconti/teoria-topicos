@@ -7,8 +7,9 @@
 Apuntes de la asignatura **Tópicos Especiales de Programación** (UCAB).
 Notas de clase por unidad, con material de apoyo, diagramas y ejemplos de código.
 
-El material **práctico** (guías, talleres y resoluciones) vive en el repositorio
-aparte: **[Guias-Practicas-Topicos](https://github.com/italovisconti/Guias-Practicas-Topicos)**.
+> [!NOTE] Material Práctico
+> El material **práctico** (guías de ejercicios, talleres y resoluciones) vive en el repositorio:  
+> 🔗 **[Guias-Practicas-Topicos](https://github.com/italovisconti/Guias-Practicas-Topicos)**
 
 ## Unidades
 
@@ -33,6 +34,7 @@ aparte: **[Guias-Practicas-Topicos](https://github.com/italovisconti/Guias-Pract
 - [Factory](Patrones/Factory.md)
 - [Singleton](Patrones/Singleton.md)
 - [Strategy](Patrones/Strategy.md)
+- [Ejercicio — Catálogo de Habilidades](Patrones/Ejercicio%20-%20Cat%C3%A1logo%20de%20Habilidades.md)
 
 ## Material adicional
 
