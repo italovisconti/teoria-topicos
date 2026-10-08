@@ -35,6 +35,7 @@ Notas de clase por unidad, con material de apoyo, diagramas y ejemplos de códig
 - [Singleton](Patrones/Singleton.md)
 - [Strategy](Patrones/Strategy.md)
 - [Ejercicio — Catálogo de Habilidades](Patrones/Ejercicio%20-%20Cat%C3%A1logo%20de%20Habilidades.md)
+- [Resolución — Catálogo de Habilidades](Patrones/Resoluci%C3%B3n%20-%20Cat%C3%A1logo%20de%20Habilidades.md)
 
 ## Material adicional
 

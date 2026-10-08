@@ -64,6 +64,7 @@ plugins:
 
 exclude_docs: |
   README.md
+  Patrones/Resolución - Catálogo de Habilidades.md
 
 nav:
   - Inicio: index.md
