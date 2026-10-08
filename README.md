@@ -8,7 +8,7 @@ Apuntes de la asignatura **Tópicos Especiales de Programación** (UCAB).
 Notas de clase por unidad, con material de apoyo, diagramas y ejemplos de código.
 
 > [!NOTE] Material Práctico
-> El material **práctico** (guías de ejercicios, talleres y resoluciones) vive en el repositorio:  
+> El material **práctico** (guías de ejercicios y resoluciones) vive en el repositorio:  
 > 🔗 **[Guias-Practicas-Topicos](https://github.com/italovisconti/Guias-Practicas-Topicos)**
 
 ## Unidades
