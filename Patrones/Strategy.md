@@ -189,3 +189,7 @@ class DecoyDuck extends Duck {
     }
 }
 ```
+
+Podemos incluso quitar los tipos de patos!!! 
+
+<img src="../assets/Patrones/strategy-15.png" width="468" alt="">
