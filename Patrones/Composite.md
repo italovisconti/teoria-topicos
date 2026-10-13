@@ -27,6 +27,9 @@ Esto nos puede confundir, así que podríamos simplificarlo:
 Primero tenemos que visualizar el problema:
 <img src="../assets/Patrones/image-20.png" width="600" alt="">
 
+Evaluación recursiva de la expresión simplificada:
+<img src="../assets/Patrones/composite.gif" width="600" alt="">
+
 Diagrama de UML
 <img src="../assets/Patrones/image-22.png" width="600" alt="">
 
