@@ -130,6 +130,10 @@ console.log(`Resultado: ${finalExpression.eval()}`); //1495
 * de manera uniforme a través de la interfaz `Expression`.
 */
 ```
+
+Del código al árbol: cada `new` crea un objeto y `eval()` recorre la estructura.
+<img src="../assets/Patrones/composite-codigo.gif" width="600" alt="">
+
 #### Resoluciones "Erróneas"
 ---
 1- 
