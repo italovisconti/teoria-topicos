@@ -193,6 +193,8 @@ Por lo tanto, un DarkRoast envuelto en Mocha y Whip sigue siendo una Beve
 
 <img src="../assets/Patrones/image-9%201.png" width="600" alt="">
 
+<img src="../assets/Patrones/decorator.gif" width="600" alt="Decorator: DarkRoast envuelto por Mocha y Whip; delegación de cost() y suma de costos.">
+
 | Paso      | Comentario Original (Inglés)                                                                   | Traducción al Español                                                                                    |
 | --------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | **Pista** | (You’ll see how in a few pages.)                                                               | **(Verás cómo funciona en unas pocas páginas.)**                                                         |
@@ -214,6 +216,14 @@ Por lo tanto, un DarkRoast envuelto en Mocha y Whip sigue siendo una Beve
 #### Definición
 El **Patrón Decorador** asigna responsabilidades adicionales a un objeto de forma dinámica.
 Los Decoradores proporcionan una alternativa flexible a la creación de subclases para extender la funcionalidad.
+
+#### Mismo contrato, más comportamiento
+
+Cada capa envuelve un objeto y ofrece la misma operación `execute()`. El cliente utiliza el mismo contrato, con o sin decoradores; la llamada se delega hacia el núcleo y cada capa añade su responsabilidad sin modificar el objeto original.
+
+<img src="../assets/Patrones/decorator-capas.gif" width="600" alt="Decorator: capas anidadas conservan execute(), delegan al núcleo y añaden responsabilidades al retorno.">
+
+En esta animación, las capas añaden comportamiento al retornar. Un decorador también puede hacerlo antes de delegar o antes y después.
 
 #### Diagrama de Clases
 
@@ -244,6 +254,8 @@ Los Decoradores proporcionan una alternativa flexible a la creación de subclase
 Es importante destacar que acá estamos usando la **herencia** para lograr la **coincidencia de tipos**, pero **no** estamos usando la **herencia** para obtener el **comportamiento**.
 
 Cuando componemos un decorador con un componente, estamos añadiendo nuevo comportamiento. Estamos adquiriendo nuevo comportamiento **no por heredarlo de una superclase, sino por componer objetos entre sí.**
+
+<img src="../assets/Patrones/decorator-polimorfismo.gif" width="600" alt="Decorator: Polimorfismo (es-un) e Inversión de Dependencias (tiene-un) para extensión dinámica.">
 
 #### Ejercicio
 
@@ -360,5 +372,3 @@ console.log(`${beverage3.getDescription()} ${beverage3.cost()}$`);
 ```
 
 <img src="../assets/Patrones/image-14%201.png" width="600" alt="">
-
-
