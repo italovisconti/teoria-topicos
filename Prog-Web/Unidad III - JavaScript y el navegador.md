@@ -396,8 +396,20 @@ git commit -m "Agregar estado y renderizado de actividades"
 
 ## Referencias
 
-- MDN. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
+### Lectura base
+
 - MDN. [JavaScript first steps](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting).
-- MDN. [Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model).
+- MDN. [Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
 - MDN. [Introduction to events](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Events).
+
+### Consulta
+
+- MDN. [JavaScript reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript).
 - MDN. [FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData).
+- [javascript.info](https://javascript.info/).
+
+### Profundización
+
+- Haverbeke, M. [Eloquent JavaScript](https://eloquentjavascript.net/).
+- Simpson, K. [You Don't Know JS Yet](https://github.com/getify/You-Dont-Know-JS).
+- MDN. [Client-side web APIs](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Client-side_APIs).

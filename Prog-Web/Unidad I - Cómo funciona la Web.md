@@ -346,7 +346,20 @@ Responder sin mirar los apuntes:
 
 ## Referencias
 
+### Lectura base
+
 - MDN. [How the web works](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works).
 - MDN. [An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview).
 - MDN. [What is a URL?](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL).
+
+### Consulta
+
 - MDN. [What is a domain name?](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_domain_name).
+- MDN. [HTTP caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching).
+- RFC 9110. [HTTP Semantics](https://www.rfc-editor.org/rfc/rfc9110.html).
+
+### Profundización
+
+- Grigorik, I. [High Performance Browser Networking](https://hpbn.co/).
+- RFC 9111. [HTTP Caching](https://www.rfc-editor.org/rfc/rfc9111.html).
+- RFC 8446. [The Transport Layer Security (TLS) Protocol Version 1.3](https://www.rfc-editor.org/rfc/rfc8446.html).

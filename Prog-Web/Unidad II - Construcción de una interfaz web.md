@@ -556,8 +556,22 @@ git commit -m "Agregar estructura y estilos de la página de actividades"
 
 ## Referencias
 
-- MDN. [HTML: HyperText Markup Language](https://developer.mozilla.org/en-US/docs/Web/HTML).
-- MDN. [Learn HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content).
-- MDN. [Learn CSS](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics).
+### Lectura base
+
+- MDN. [Structuring content with HTML](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content).
+- MDN. [CSS styling basics](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics).
 - MDN. [Accessibility](https://developer.mozilla.org/en-US/docs/Web/Accessibility).
-- W3C. [Web Content Accessibility Guidelines (WCAG)](https://www.w3.org/WAI/standards-guidelines/wcag/).
+
+### Consulta
+
+- MDN. [HTML elements reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
+- MDN. [CSS reference](https://developer.mozilla.org/en-US/docs/Web/CSS).
+- MDN. [Forms](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms).
+- W3C. [WAI Tutorials](https://www.w3.org/WAI/tutorials/).
+
+### Profundización
+
+- web.dev. [Learn HTML](https://web.dev/learn/html) y [Learn CSS](https://web.dev/learn/css).
+- Pickering, H. [Inclusive Components](https://inclusive-components.design/).
+- W3C. [Web Content Accessibility Guidelines (WCAG) 2.2](https://www.w3.org/TR/WCAG22/).
+- Yablonski, J. [Laws of UX](https://lawsofux.com/).
