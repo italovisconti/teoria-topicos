@@ -82,6 +82,10 @@ nav:
       - Unidad VIII - Programación orientada a aspectos: "Unidad VIII - Programación orientada a aspectos.md"
       - Unidad IX - Programación Reactiva: "Unidad IX - Programacion Reactiva.md"
       - Unidad X - Metaprogramación: "Unidad X - Metaprogramacion.md"
+  - Desarrollo Web:
+      - Unidad I - Cómo funciona la Web: "Prog-Web/Unidad I - Cómo funciona la Web.md"
+      - Unidad II - Construcción de una interfaz web: "Prog-Web/Unidad II - Construcción de una interfaz web.md"
+      - Unidad III - JavaScript y el navegador: "Prog-Web/Unidad III - JavaScript y el navegador.md"
   - Patrones de diseño:
       - Composite: Patrones/Composite.md
       - Decorator: Patrones/Decorator.md

@@ -5,7 +5,7 @@ PY ?= python3
 
 prep:
 	@rm -rf .site-src && mkdir -p .site-src
-	@cp -r assets Patrones "Unidades Adicionales" Ejercicios .site-src/
+	@cp -r assets Patrones "Unidades Adicionales" Ejercicios Prog-Web .site-src/
 	@cp *.md LICENSE .site-src/
 
 serve: prep  ## http://127.0.0.1:8000
