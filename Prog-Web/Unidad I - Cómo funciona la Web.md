@@ -12,10 +12,10 @@ Es frecuente usar ambos términos como sinónimos, pero designan cosas distintas
 
 | Concepto     | Qué es                                                                                                                                                 |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Internet** | La infraestructura: una red de redes que se comunican mediante protocolos, principalmente TCP/IP.                                                      |
-| **Web**      | Un servicio que funciona sobre Internet: documentos y recursos identificados por URL, transferidos con HTTP y escritos, entre otros formatos, en HTML. |
+| **Internet** | La infraestructura: una red de redes que se comunican mediante protocolos, principalmente **TCP/IP** *Transmission Control Protocol / Internet Protocol*.                                                      |
+| **Web**      | Un servicio que funciona sobre Internet: documentos y recursos identificados por **URL** *Uniform Resource Locator*, transferidos con **HTTP** *Hypertext Transfer Protocol* y escritos, entre otros formatos, en **HTML** *HyperText Markup Language*. |
 
-Sobre Internet también funcionan el correo electrónico, el DNS, SSH, las videollamadas, los videojuegos en línea y las actualizaciones del sistema operativo. La Web es **uno** de esos servicios.
+Sobre Internet también funcionan el correo electrónico, el **DNS** *Domain Name System*, **SSH** *Secure Shell*, las videollamadas, los videojuegos en línea y las actualizaciones del sistema operativo. La Web es **uno** de esos servicios.
 
 Una analogía útil:
 
@@ -44,11 +44,13 @@ El cliente **siempre inicia** la conversación. El servidor no “empuja” dato
 Los roles no son absolutos: un servidor web puede actuar como cliente de una base de datos o de otro servicio. Lo que define el rol es **quién inicia la comunicación en ese intercambio**.
 
 > [!NOTE] Caso especial: peer-to-peer
-> En una red P2P los nodos pueden actuar como clientes y servidores a la vez. Es una excepción al modelo clásico, no la regla general de la Web.
+> En una red **P2P** *Peer-to-Peer* los nodos pueden actuar como clientes y servidores a la vez. Es una excepción al modelo clásico, no la regla general de la Web.
 
 ### ¿Qué es un servidor web?
 
 Un **servidor web** es un programa que escucha conexiones en un puerto y responde peticiones HTTP. No es una máquina mística ni un lugar: es un proceso que corre en una computadora. Esa computadora puede ser un servidor de un datacenter, una máquina virtual, un contenedor o tu propia laptop.
+
+La diferencia práctica es la disponibilidad: un servidor web está pensado para estar siempre encendido y ser accesible desde cualquier lugar.
 
 La prueba más directa: al ejecutar
 
@@ -56,58 +58,62 @@ La prueba más directa: al ejecutar
 python3 -m http.server 8000
 ```
 
-ese proceso **es** un servidor web. Escucha en el puerto `8000` y devuelve los archivos del directorio actual. Nginx, Apache y Caddy son servidores web más completos; Node.js también puede crear un servidor HTTP, y Express es un framework que simplifica esa tarea.
+ese proceso **es** un servidor web. Escucha en el puerto `8000` y devuelve los archivos del directorio actual. También puede ejecutar lógica propia: consultar una base de datos, validar un formulario o generar HTML. Nginx, Caddy o un programa escrito en Node.js o Python pueden cumplir ese papel.
 
-Conviene separar tres capas que suelen confundirse:
+Para este curso, llamamos **servidor web** a ambos casos: lo importante es que recibe peticiones y decide respuestas. Conviene separar dos capas:
 
 | Capa | Qué hace | Ejemplos |
 |---|---|---|
-| **Servidor web** | Recibe la petición HTTP y devuelve una respuesta. Puede servir archivos, redirigir, comprimir, terminar TLS o delegar a una aplicación. | Nginx, Apache, Caddy, `python3 -m http.server` |
-| **Aplicación** | Decide respuestas dinámicas: consulta datos, valida, aplica reglas de negocio. | Node.js, Python, PHP, Java |
-| **Hosting / infraestructura** | Es donde corre todo lo anterior: una máquina, una VM, un contenedor o un servicio administrado. | GitHub Pages, Cloudflare Pages, un VPS, un home server |
+| **Servidor web / aplicación** | Recibe la petición HTTP y decide la respuesta. Puede servir archivos, redirigir, comprimir, terminar TLS, ejecutar lógica o consultar una base de datos. | Nginx, Caddy, `python3 -m http.server`, Node.js, Python, PHP |
+| **Hosting / infraestructura** | Es donde corre el servidor: una máquina, una **VM** *Virtual Machine*, un contenedor o un servicio administrado. | GitHub Pages, Cloudflare Pages, un VPS, un home server |
 
 ```mermaid
 flowchart LR
     C["Cliente"] --> H["Hosting / CDN"]
-    H --> W["Servidor web<br/>Nginx, Caddy, ..."]
-    W --> A["Aplicación<br/>Node, Python, ..."]
-    A --> D[("Base de datos")]
+    H --> W["Servidor web / aplicación<br/>Nginx, Caddy, Node, Python"]
+    W --> D[("Base de datos")]
 ```
 
-No todas las opciones incluyen todas las capas. GitHub Pages, por ejemplo, solo sirve archivos estáticos: no ejecuta una aplicación ni una base de datos.
+> [!NOTE] Una simplificación deliberada
+> En producción a veces se separa el servidor web —por ejemplo, Nginx— de la aplicación —por ejemplo, Node.js— que corre detrás. Esa separación es útil, pero para entender el modelo básico alcanza con pensarlos como **el programa que atiende la petición**. Lo que no conviene confundir es ese programa con el **hosting**: el primero es software; el segundo es dónde corre.
+
+No todas las opciones incluyen las mismas capas. GitHub Pages, por ejemplo, solo sirve archivos estáticos: no ejecuta lógica propia ni consulta una base de datos.
 
 #### Formas concretas de publicar
 
-| Opción | Qué te da | Qué administrás | Cuándo conviene |
-|---|---|---|---|
-| **GitHub Pages** | Hosting estático con CDN y TLS, publicado desde un repositorio. | Solo el contenido y el flujo de build. | Sitios estáticos, documentación, portafolios. No ejecuta backend. |
-| **Cloudflare Pages** | Hosting estático con CDN y funciones serverless. | El proyecto y las funciones; no el sistema operativo. | Sitios estáticos con algo de lógica en el borde. |
-| **VPS** (EC2, Lightsail, DigitalOcean, etc.) | Una máquina virtual con IP pública. | Sistema operativo, servidor web, TLS, procesos, backups, seguridad y actualizaciones. | Cuando necesitás control, backend propio o aprender infraestructura. |
-| **Home server** (Raspberry Pi, PC viejo, NAS) | Una máquina en tu red, publicada con IP pública o un túnel. | Todo: hardware, energía, red, DNS, TLS y seguridad. | Aprender, laboratorio, servicios personales. Requiere más cuidado. |
-| **PaaS** (Render, Railway, Fly.io, etc.) | Una plataforma que ejecuta tu aplicación. | La aplicación y su configuración; la plataforma gestiona el runtime. | Backend sin querer administrar servidores. |
+La diferencia principal es **cuánto se administra**:
+
+- **Hosting estático — GitHub Pages, Cloudflare Pages.**
+	Se sirven archivos desde una **CDN** *Content Delivery Network*; no se administra servidor ni sistema operativo. GitHub Pages no ejecuta backend; Cloudflare Pages permite sumar funciones serverless. Conviene para sitios, documentación y portafolios.
+- **VPS — EC2, Lightsail, DigitalOcean.**
+	Un **VPS** *Virtual Private Server* alquila una máquina virtual con IP pública. Se administra sistema operativo, servidor web, TLS, procesos, backups y seguridad. Conviene cuando se necesita control, backend propio o aprender infraestructura.
+- **Home server — Raspberry Pi, PC viejo, NAS.**
+	Se usa hardware propio, como un **NAS** *Network Attached Storage*. Es el mismo trabajo que un VPS, más las condiciones de la red: IP dinámica, **CGNAT** *Carrier-Grade NAT*, puertos bloqueados, energía y disponibilidad. Conviene para aprender, laboratorio o servicios personales.
+- **PaaS — Render, Railway, Fly.io.**
+	Una **PaaS** *Platform as a Service* ejecuta la aplicación y gestiona el runtime. Se administra la app y su configuración, no el servidor. Conviene para backend sin querer administrar infraestructura.
 
 Este mismo sitio de apuntes es un ejemplo de GitHub Pages: un workflow construye el HTML y GitHub lo sirve; no hay un servidor propio que administrar.
 
 > [!NOTE] La nube es el servidor de otra persona
-> “La nube” no elimina servidores: los alquila, los virtualiza y los administra por vos. Lo que cambia es **quién responde** por la máquina, la red y el mantenimiento. Un servicio administrado no es magia; es una capa de abstracción sobre infraestructura real.
+> “La nube” no elimina servidores: los alquila, los virtualiza y los administra. Lo que cambia es **quién responde** por la máquina, la red y el mantenimiento. Un servicio administrado no es magia; es una capa de abstracción sobre infraestructura real.
 
 #### Qué cambia cuando el servidor es tuyo
 
-- **Dirección:** necesitás una IP pública o un nombre que resuelva a ella.
+- **Dirección:** se necesita una IP pública o un nombre que resuelva a ella.
 - **Puertos y firewall:** el `80` y el `443` deben estar accesibles; el resto conviene cerrarlo.
 - **TLS:** un certificado, por ejemplo de Let's Encrypt, y un proceso de renovación.
-- **Procesos:** el servidor web y la aplicación tienen que iniciarse y reiniciarse solos.
+- **Procesos:** el servidor tiene que iniciarse y reiniciarse solo; si la aplicación corre aparte, también.
 - **Actualizaciones:** parches del sistema, usuarios, permisos, logs y backups.
 - **Disponibilidad:** energía, red y monitoreo. Un home server no compite con un datacenter en uptime.
 
 En un home server además pueden aparecer obstáculos de red: IP dinámica, CGNAT o un proveedor que bloquea los puertos `80` y `443`. Una salida habitual es un túnel (Cloudflare Tunnel, Tailscale) o un servicio de DNS dinámico.
 
 > [!TIP] Ejercicio de lectura
-> Para el proyecto del curso, ¿qué opción elegirías para publicar una página estática? ¿Y si necesitaras guardar actividades en una base de datos? Justificá según las capas que administra cada opción.
+> Para el proyecto del curso, ¿qué opción elegirías para publicar una página estática? ¿Y si necesitaras guardar actividades en una base de datos? Justifica según las capas que administra cada opción.
 
 ## 3. Anatomía de una URL
 
-Una URL no es solo “la dirección”. Es una estructura con partes que el navegador interpreta.
+Una **URL** *Uniform Resource Locator* no es solo “la dirección”. Es una estructura con partes que el navegador interpreta.
 
 ```text
 https://usuario:clave@www.ejemplo.com:443/curso/web?unidad=1#temario
@@ -146,7 +152,7 @@ Entender la resolución de URLs evita una gran cantidad de errores en HTML, CSS,
 
 ## 4. DNS: el sistema de nombres
 
-Los humanos usamos nombres; las máquinas se comunican con direcciones IP. **DNS** (Domain Name System) traduce nombres de dominio a direcciones IP.
+Los humanos usamos nombres; las máquinas se comunican con direcciones IP. **DNS** *Domain Name System* traduce nombres de dominio a direcciones IP.
 
 ```mermaid
 sequenceDiagram
@@ -168,9 +174,9 @@ sequenceDiagram
 
 Puntos importantes:
 
-- La resolución es **jerárquica**: raíz, dominio de nivel superior (`.com`, `.org`, `.ve`), dominio y subdominios.
+- La resolución es **jerárquica**: raíz, **TLD** *Top-Level Domain* o dominio de nivel superior (`.com`, `.org`, `.ve`), dominio y subdominios.
 - Existen **cachés** en el navegador, el sistema operativo, el resolver y los servidores. Por eso un cambio de DNS no se propaga instantáneamente.
-- Cada registro tiene un **TTL** (time to live): el tiempo que puede conservarse en caché.
+- Cada registro tiene un **TTL** *Time to Live*: el tiempo que puede conservarse en caché.
 - DNS no transporta la página; solo resuelve el nombre. Una vez obtenida la IP, la conexión se establece con el servidor correspondiente.
 
 Herramientas para observarlo:
@@ -215,16 +221,20 @@ sequenceDiagram
 5. **Petición HTTP.** El navegador envía un método, una ruta, cabeceras y, a veces, un cuerpo.
 6. **Procesamiento en el servidor.** El servidor decide qué responder: un archivo, una página generada, datos de una API, un error.
 7. **Respuesta HTTP.** Vuelve un código de estado, cabeceras y un cuerpo.
-8. **Subrecursos.** El navegador parsea el HTML y descubre CSS, JavaScript, imágenes y fuentes. Cada uno genera nuevas peticiones.
-9. **Renderizado.** Construye el DOM, aplica estilos, calcula el layout y pinta.
+8. **Subrecursos.** El navegador parsea el HTML y descubre **CSS** *Cascading Style Sheets*, JavaScript, imágenes y fuentes. Cada uno genera nuevas peticiones.
+9. **Renderizado.** Construye el **DOM** *Document Object Model*, aplica estilos, calcula el layout y pinta.
 10. **Ejecución de JavaScript.** El código puede modificar el DOM, hacer nuevas peticiones o responder a eventos.
 
 > [!IMPORTANT] Una página no es una sola petición
 > El documento HTML es solo el punto de partida. Una página típica genera decenas de peticiones. Por eso el rendimiento se analiza sobre el **conjunto** de recursos y su orden, no solo sobre el tamaño del HTML.
 
+<img src="../assets/Prog-Web/cascada-network.gif" width="600" alt="Inspección de la cascada de peticiones en la pestaña Network de las herramientas de desarrollo.">
+
+*La cascada de red: el documento HTML inicial desencadena la descarga concurrente de hojas de estilo, fuentes, imágenes, scripts y peticiones a APIs.*
+
 ## 6. HTTP: el contrato de la comunicación
 
-HTTP (HyperText Transfer Protocol) define **cómo se piden y se devuelven recursos**. Es un protocolo de texto, fácil de leer y de inspeccionar.
+**HTTP** *Hypertext Transfer Protocol* define **cómo se piden y se devuelven recursos**. Es un protocolo de texto, fácil de leer y de inspeccionar.
 
 ### Estructura de una petición
 
@@ -274,7 +284,7 @@ Estas propiedades no son Decoración: permiten que navegadores, cachés y proxie
 | `5xx` | Error del servidor | `500 Internal Server Error`, `502 Bad Gateway`, `503 Service Unavailable` |
 
 > [!WARNING] `401` no es lo mismo que `403`
-> `401 Unauthorized` significa “no sé quién eres o no has presentado credenciales válidas”. `403 Forbidden` significa “sé quién eres, pero no tienes permiso”. La distinción importa al diseñar una API y al depurar.
+> `401 Unauthorized` significa “no sé quién eres o no has presentado credenciales válidas”. `403 Forbidden` significa “sé quién eres, pero no tienes permiso”. La distinción importa al diseñar una **API** *Application Programming Interface* y al depurar.
 
 ### Cabeceras
 
@@ -288,7 +298,7 @@ Las cabeceras aportan contexto: formato del cuerpo, idioma, caché, cookies, cre
 | `Authorization` | Credenciales, por ejemplo un token. |
 | `Cookie` | Cookies enviadas al servidor. |
 | `Cache-Control` | Reglas de almacenamiento en caché. |
-| `Access-Control-Allow-Origin` | Origen permitido en una respuesta CORS. |
+| `Access-Control-Allow-Origin` | Origen permitido en una respuesta **CORS** *Cross-Origin Resource Sharing*. |
 
 ### HTTP es sin estado
 
@@ -299,7 +309,7 @@ Cada petición es independiente: el servidor no recuerda automáticamente la ant
 
 ## 7. HTTPS: qué protege y qué no
 
-HTTPS es HTTP sobre **TLS**. Aporta tres propiedades:
+**HTTPS** *Hypertext Transfer Protocol Secure* es HTTP sobre **TLS** *Transport Layer Security*. Aporta tres propiedades:
 
 - **Confidencialidad:** el contenido no puede leerse en tránsito.
 - **Integridad:** no puede modificarse sin que se detecte.
@@ -321,7 +331,7 @@ La comunicación se organiza en capas. Cada una ofrece un servicio a la capa sup
 | Capa | Ejemplos | Responsabilidad |
 |---|---|---|
 | Aplicación | HTTP, DNS, TLS | Reglas del servicio: peticiones, nombres, cifrado. |
-| Transporte | TCP, UDP | Entrega de datos entre procesos; orden y confiabilidad en TCP. |
+| Transporte | TCP, **UDP** *User Datagram Protocol* | Entrega de datos entre procesos; orden y confiabilidad en TCP. |
 | Red | IP | Direccionamiento y enrutamiento entre redes. |
 | Enlace | Ethernet, Wi-Fi | Comunicación en el medio físico local. |
 
