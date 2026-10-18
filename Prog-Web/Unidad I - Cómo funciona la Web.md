@@ -10,10 +10,10 @@
 
 Es frecuente usar ambos términos como sinónimos, pero designan cosas distintas.
 
-| Concepto | Qué es |
-|---|---|
-| **Internet** | La infraestructura: una red de redes que se comunican mediante protocolos, principalmente TCP/IP. |
-| **Web** | Un servicio que funciona sobre Internet: documentos y recursos identificados por URL, transferidos con HTTP y escritos, entre otros formatos, en HTML. |
+| Concepto     | Qué es                                                                                                                                                 |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Internet** | La infraestructura: una red de redes que se comunican mediante protocolos, principalmente TCP/IP.                                                      |
+| **Web**      | Un servicio que funciona sobre Internet: documentos y recursos identificados por URL, transferidos con HTTP y escritos, entre otros formatos, en HTML. |
 
 Sobre Internet también funcionan el correo electrónico, el DNS, SSH, las videollamadas, los videojuegos en línea y las actualizaciones del sistema operativo. La Web es **uno** de esos servicios.
 
@@ -125,6 +125,10 @@ nslookup ejemplo.com
 > No hay una única base de datos central con todos los dominios. La información está repartida y delegada jerárquicamente, con cachés intermedias. Esa descentralización es parte de por qué Internet escala.
 
 ## 5. El viaje completo de una petición
+
+<img src="../assets/Prog-Web/viaje-peticion.gif" width="600" alt="Animación del recorrido de una petición: DNS, TCP/TLS, HTTP y renderizado.">
+
+*El recorrido completo en capas: resolver el nombre, abrir el canal, pedir el documento y renderizarlo. El diagrama siguiente detalla también las peticiones de subrecursos.*
 
 ```mermaid
 sequenceDiagram
