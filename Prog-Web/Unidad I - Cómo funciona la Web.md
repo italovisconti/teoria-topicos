@@ -46,6 +46,65 @@ Los roles no son absolutos: un servidor web puede actuar como cliente de una bas
 > [!NOTE] Caso especial: peer-to-peer
 > En una red P2P los nodos pueden actuar como clientes y servidores a la vez. Es una excepción al modelo clásico, no la regla general de la Web.
 
+### ¿Qué es un servidor web?
+
+Un **servidor web** es un programa que escucha conexiones en un puerto y responde peticiones HTTP. No es una máquina mística ni un lugar: es un proceso que corre en una computadora. Esa computadora puede ser un servidor de un datacenter, una máquina virtual, un contenedor o tu propia laptop.
+
+La prueba más directa: al ejecutar
+
+```bash
+python3 -m http.server 8000
+```
+
+ese proceso **es** un servidor web. Escucha en el puerto `8000` y devuelve los archivos del directorio actual. Nginx, Apache y Caddy son servidores web más completos; Node.js también puede crear un servidor HTTP, y Express es un framework que simplifica esa tarea.
+
+Conviene separar tres capas que suelen confundirse:
+
+| Capa | Qué hace | Ejemplos |
+|---|---|---|
+| **Servidor web** | Recibe la petición HTTP y devuelve una respuesta. Puede servir archivos, redirigir, comprimir, terminar TLS o delegar a una aplicación. | Nginx, Apache, Caddy, `python3 -m http.server` |
+| **Aplicación** | Decide respuestas dinámicas: consulta datos, valida, aplica reglas de negocio. | Node.js, Python, PHP, Java |
+| **Hosting / infraestructura** | Es donde corre todo lo anterior: una máquina, una VM, un contenedor o un servicio administrado. | GitHub Pages, Cloudflare Pages, un VPS, un home server |
+
+```mermaid
+flowchart LR
+    C["Cliente"] --> H["Hosting / CDN"]
+    H --> W["Servidor web<br/>Nginx, Caddy, ..."]
+    W --> A["Aplicación<br/>Node, Python, ..."]
+    A --> D[("Base de datos")]
+```
+
+No todas las opciones incluyen todas las capas. GitHub Pages, por ejemplo, solo sirve archivos estáticos: no ejecuta una aplicación ni una base de datos.
+
+#### Formas concretas de publicar
+
+| Opción | Qué te da | Qué administrás | Cuándo conviene |
+|---|---|---|---|
+| **GitHub Pages** | Hosting estático con CDN y TLS, publicado desde un repositorio. | Solo el contenido y el flujo de build. | Sitios estáticos, documentación, portafolios. No ejecuta backend. |
+| **Cloudflare Pages** | Hosting estático con CDN y funciones serverless. | El proyecto y las funciones; no el sistema operativo. | Sitios estáticos con algo de lógica en el borde. |
+| **VPS** (EC2, Lightsail, DigitalOcean, etc.) | Una máquina virtual con IP pública. | Sistema operativo, servidor web, TLS, procesos, backups, seguridad y actualizaciones. | Cuando necesitás control, backend propio o aprender infraestructura. |
+| **Home server** (Raspberry Pi, PC viejo, NAS) | Una máquina en tu red, publicada con IP pública o un túnel. | Todo: hardware, energía, red, DNS, TLS y seguridad. | Aprender, laboratorio, servicios personales. Requiere más cuidado. |
+| **PaaS** (Render, Railway, Fly.io, etc.) | Una plataforma que ejecuta tu aplicación. | La aplicación y su configuración; la plataforma gestiona el runtime. | Backend sin querer administrar servidores. |
+
+Este mismo sitio de apuntes es un ejemplo de GitHub Pages: un workflow construye el HTML y GitHub lo sirve; no hay un servidor propio que administrar.
+
+> [!NOTE] La nube es el servidor de otra persona
+> “La nube” no elimina servidores: los alquila, los virtualiza y los administra por vos. Lo que cambia es **quién responde** por la máquina, la red y el mantenimiento. Un servicio administrado no es magia; es una capa de abstracción sobre infraestructura real.
+
+#### Qué cambia cuando el servidor es tuyo
+
+- **Dirección:** necesitás una IP pública o un nombre que resuelva a ella.
+- **Puertos y firewall:** el `80` y el `443` deben estar accesibles; el resto conviene cerrarlo.
+- **TLS:** un certificado, por ejemplo de Let's Encrypt, y un proceso de renovación.
+- **Procesos:** el servidor web y la aplicación tienen que iniciarse y reiniciarse solos.
+- **Actualizaciones:** parches del sistema, usuarios, permisos, logs y backups.
+- **Disponibilidad:** energía, red y monitoreo. Un home server no compite con un datacenter en uptime.
+
+En un home server además pueden aparecer obstáculos de red: IP dinámica, CGNAT o un proveedor que bloquea los puertos `80` y `443`. Una salida habitual es un túnel (Cloudflare Tunnel, Tailscale) o un servicio de DNS dinámico.
+
+> [!TIP] Ejercicio de lectura
+> Para el proyecto del curso, ¿qué opción elegirías para publicar una página estática? ¿Y si necesitaras guardar actividades en una base de datos? Justificá según las capas que administra cada opción.
+
 ## 3. Anatomía de una URL
 
 Una URL no es solo “la dirección”. Es una estructura con partes que el navegador interpreta.
@@ -353,6 +412,7 @@ Responder sin mirar los apuntes:
 ### Lectura base
 
 - MDN. [How the web works](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works).
+- MDN. [What is a web server?](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_web_server).
 - MDN. [An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview).
 - MDN. [What is a URL?](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL).
 
