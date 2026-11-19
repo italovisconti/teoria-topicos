@@ -370,3 +370,59 @@ El bucle `for...of` es, en sí mismo, un **algoritmo genérico**. No le importa 
 
 
 #### Ejercicios
+
+##### Una cola de turnos para distintos tipos de datos
+
+Un sistema necesita atender elementos en el orden en que llegan. A veces se guardan nombres, otras veces números de turno y otras, objetos de una clase propia. La lógica de la cola debe ser la misma en los tres casos.
+
+**Consigna:** implementar una clase `Cola<T>` con estas operaciones:
+
+- `agregar(elemento: T): void`: coloca un elemento al final de la cola.
+- `atender(): T | undefined`: retira y devuelve el primer elemento. Si la cola está vacía, devuelve `undefined`.
+- `cantidad(): number`: devuelve cuántos elementos quedan.
+
+No se debe usar `any` ni crear una clase distinta para cada tipo. Se puede utilizar un arreglo `T[]` para guardar los elementos.
+
+```ts
+class Cola<T> {
+    private elementos: T[] = [];
+
+    // Implementar agregar, atender y cantidad.
+}
+```
+
+**Comprobar el comportamiento con estos casos:**
+
+```ts
+const nombres = new Cola<string>();
+nombres.agregar("Ana");
+nombres.agregar("Luis");
+console.log(nombres.atender()); // "Ana"
+console.log(nombres.cantidad()); // 1
+console.log(nombres.atender()); // "Luis"
+console.log(nombres.atender()); // undefined
+
+const turnos = new Cola<number>();
+turnos.agregar(0);
+turnos.agregar(12);
+console.log(turnos.atender()); // 0: es un turno válido
+console.log(turnos.atender()); // 12
+
+// Se reutiliza la clase Usuario definida antes en la unidad.
+const usuarios = new Cola<Usuario>();
+const usuarioEnEspera = new Usuario("Marta");
+usuarios.agregar(usuarioEnEspera);
+console.log(usuarios.atender() === usuarioEnEspera); // true
+
+// Debe producir un error de tipos si se descomenta:
+// nombres.agregar(42);
+```
+
+> [!TIP]
+> Los arreglos ofrecen `push()` para agregar al final y `shift()` para retirar el primer elemento.
+
+**Para discutir:**
+
+1. ¿Qué representa `T` en cada cola? ¿Qué parte del código implementa el **cómo** y qué parte determina el **qué**?
+2. ¿Por qué `atender()` devuelve `T | undefined` en lugar de solo `T`?
+3. ¿La clase `Cola<T>` necesita saber que `Usuario` tiene una propiedad `nombre`? ¿Por qué?
