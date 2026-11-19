@@ -52,6 +52,10 @@ buscar<boolean>([true, false], false); // Funciona
 Esta `<T>` es como decir: 'No sé qué tipo vas a usar, pero sea lo que sea, lo voy a manejar consistentemente'. 
 La `T` es solo un nombre, podríamos llamarla `Tipo`, `X`, lo que sea, pero por convención usamos `T`."
 
+<img src="assets/Unidad%20V%20-%20Programacion%20Generica/buscar-generico.gif" width="900" alt="Dos llamadas a buscar, una con números y otra con cadenas, recorren sus arreglos con el mismo algoritmo y devuelven el índice 1.">
+
+**Para observar:** el tipo de los elementos cambia entre llamadas, pero el recorrido es el mismo. TypeScript comprueba los tipos antes de ejecutar el código; no genera una función distinta para cada tipo.
+
 Se puede ver como algo así:
 
 ```ts
@@ -253,6 +257,10 @@ const cosas = [
 // calcularTotal(cosas); // ERROR: tipo no compatible
 ```
 
+<img src="assets/Unidad%20V%20-%20Programacion%20Generica/restriccion-generica.gif" width="900" alt="El verificador de tipos acepta Producto y Servicio porque ambos tienen un precio numérico, y rechaza un objeto que solo tiene color.">
+
+**Para predecir:** ¿qué pasaría si `precio` fuera la cadena `"25"`? La propiedad existe, pero no cumple el contrato: el precio debe ser un número. La restricción se comprueba al compilar, no al ejecutar.
+
 Hay usos mucho más simples, y muy útiles.
 
 ```ts
@@ -290,6 +298,21 @@ Sabiendo esto... ¿cómo definiríamos a un tipo genérico?
 
 Un tipo genérico es una función genérica, clase, interfaz, etc., que está parametrizada sobre uno o más tipos. Los tipos genéricos nos permiten escribir código general que funciona con diferentes tipos, posibilitando un **alto nivel de reutilización de código**.
 
+<img src="assets/Unidad%20V%20-%20Programacion%20Generica/parametro-de-tipo.gif" width="900" alt="La misma clase Box guarda y devuelve un texto, un número o una instancia de Usuario. T especifica el tipo del valor en cada uso, sin cambiar la implementación.">
+
+La clase `Box<T>` separa el **qué** del **cómo**. El **qué** es el tipo del valor: `string`, `number` o incluso una clase propia como `Usuario`. El **cómo** se escribe una sola vez: el constructor guarda el valor y `getValue()` lo devuelve. TypeScript comprueba que el tipo de entrada y el de retorno concuerden con `T` en cada uso.
+
+```ts
+class Usuario {
+    constructor(public nombre: string) {}
+}
+
+const usuario = new Usuario("Ana");
+const texto = new Box<string>("Hola").getValue();       // "Hola": string
+const numero = new Box<number>(42).getValue();          // 42: number
+const persona = new Box<Usuario>(usuario).getValue();   // usuario: Usuario
+```
+
 <img src="assets/Unidad%20V%20-%20Programacion%20Generica/image-1.png" width="600" alt="">
 
 Los tipos genéricos están en muchísimos lados, y por eso su entendimiento es tan importante. Pensemos en algo que hacemos todos los días. ¿Qué estructuras de datos almacenen una _secuencia_ de cosas?
@@ -311,7 +334,7 @@ for (const item of miString) { /* item es string */ }
 for (const item of miSet) { /* item es boolean */ }
 ```
 
-¿Alguna vez se han preguntado _cómo_ es que el `for...of` "sabe" cómo recorrer un array (que es una lista), un string (que es una secuencia de caracteres) y un Set (que no tiene orden)?
+¿Cómo sabe `for...of` recorrer un arreglo, una cadena y un `Set`? Cada uno proporciona su propio iterador; por ejemplo, `Set` recorre sus elementos en el orden de inserción.
 
 La respuesta es que todas estas estructuras cumplen un **contrato**. Ese contrato se llama **Iterable**.
 
@@ -324,6 +347,8 @@ La respuesta es que todas estas estructuras cumplen un **contrato**. Ese contrat
 Piensen en un mazo de cartas (el _Iterable_). El _Iterador_ es su mano, que saca una carta a la vez (`.next()`) hasta que el mazo se vacía.
 
 El bucle `for...of` es simplemente un consumidor elegante que le pide el _Iterador_ al _Iterable_ y luego llama `.next()`, `.next()`, `.next()`... por nosotros.
+
+**Para seguir el recorrido:** `for...of` llama a `[Symbol.iterator]()` en el iterable para obtener un iterador. Cada llamada a `next()` que devuelve `done: false` entrega un valor al cuerpo del bucle. Con `done: true`, el bucle termina sin procesar ese último resultado.
 
 *Hay una definición mucho más técnica para esto; la cual se encuentra en la referencia indicada.*
 
@@ -345,4 +370,3 @@ El bucle `for...of` es, en sí mismo, un **algoritmo genérico**. No le importa 
 
 
 #### Ejercicios
-
