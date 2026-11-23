@@ -52,7 +52,6 @@ Notas de clase por unidad, con material de apoyo, diagramas y ejemplos de códig
 - [Reglamento oficial del juego](Proyecto/reglamento-oficial-juego-robots.md)
 - [Especificación general (40 APIs)](Proyecto/especificacion-general-war-bots.md)
 - [Guía técnica — Módulo 3: Garaje y Billetera](Proyecto/guia-tecnica-garaje-italo.md)
-- 🔗 Repositorio completo del proyecto: [italovisconti/war-bots](https://github.com/italovisconti/war-bots)
 
 ## Licencia
 

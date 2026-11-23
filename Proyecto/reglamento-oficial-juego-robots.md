@@ -69,5 +69,3 @@ A continuación se resume la distribución formal de responsabilidades entre los
 | Módulo 2 | La Chatarrería y Subastas | Profesor Luis (Sección 1) | Embargos (HP < 25%), tasación y subastas |
 | Módulo 3 | Garaje, Ensamblador y Billetera | Profesor Ítalo Visconti | Billetera ($1.000), taller y Chasis Nudo |
 | Módulo 4 | Arena 1v1 y Simulación | Profesor Luis (Sección 2) | Motor RNG, mejor de 3 y premios (+$300/+$100) |
-
-> Nota: La propuesta v5 puede diferir de estas reglas; véase [propuesta-proyecto-topicos-v5.md](https://github.com/italovisconti/war-bots/blob/main/propuesta-proyecto-topicos-v5.md).

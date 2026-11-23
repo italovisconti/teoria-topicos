@@ -25,10 +25,10 @@ Cada módulo mantiene su propio modelo MongoDB. Los detalles de colecciones y ca
 
 | Módulo | Base de datos | Modelo y APIs desarrollados |
 |---|---|---|
-| Módulo 1 | `tienda_db` | [Tienda — Yisheng](https://github.com/italovisconti/war-bots/blob/main/guia-tecnica-tienda-yisheng.md) |
-| Módulo 2 | `chatarreria_db` | [Chatarrería — Luis, Sección 1](https://github.com/italovisconti/war-bots/blob/main/guia-tecnica-chatarreria-luis-sec1.md) |
+| Módulo 1 | `tienda_db` | Tienda — Yisheng (guía de su cátedra) |
+| Módulo 2 | `chatarreria_db` | Chatarrería — Luis, Sección 1 (guía de su cátedra) |
 | Módulo 3 | `jugadores_garaje_db` | [Garaje y billetera — Ítalo Visconti](guia-tecnica-garaje-italo.md) |
-| Módulo 4 | `arena_combate_db` | [Arena — Luis, Sección 2](https://github.com/italovisconti/war-bots/blob/main/guia-tecnica-arena-luis-sec2.md) |
+| Módulo 4 | `arena_combate_db` | Arena — Luis, Sección 2 (guía de su cátedra) |
 
 ## Despliegue y entrega continua (CD)
 
