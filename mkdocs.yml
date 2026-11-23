@@ -92,6 +92,10 @@ nav:
       - Factory: Patrones/Factory.md
       - Singleton: Patrones/Singleton.md
       - Strategy: Patrones/Strategy.md
+  - Proyecto (WAR-BOTS):
+      - Reglamento oficial: Proyecto/reglamento-oficial-juego-robots.md
+      - Especificación general (40 APIs): Proyecto/especificacion-general-war-bots.md
+      - "Módulo 3: Garaje y Billetera": Proyecto/guia-tecnica-garaje-italo.md
   - Material adicional:
       - Manejadores de Paquetes: "Unidades Adicionales/Unidad Adicional - Manejadores de Paquetes.md"
       - npm: "Unidades Adicionales/Unidad Adicional - npm.md"

@@ -28,7 +28,7 @@ jobs:
         run: |
           rm -rf .site-src
           mkdir -p .site-src
-          cp -r assets Patrones "Unidades Adicionales" Ejercicios Prog-Web .site-src/
+          cp -r assets Patrones "Unidades Adicionales" Ejercicios Prog-Web Proyecto .site-src/
           cp *.md LICENSE .site-src/
       - name: Build
         run: mkdocs build --site-dir _site

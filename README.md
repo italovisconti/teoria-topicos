@@ -47,6 +47,13 @@ Notas de clase por unidad, con material de apoyo, diagramas y ejemplos de códig
 - [npm](Unidades%20Adicionales/Unidad%20Adicional%20-%20npm.md)
 - [Composición y Tipos de Datos Alg](Ejercicios/Composicion%20y%20Tipos%20de%20Datos%20Alg.md)
 
+## Proyecto (WAR-BOTS)
+
+- [Reglamento oficial del juego](Proyecto/reglamento-oficial-juego-robots.md)
+- [Especificación general (40 APIs)](Proyecto/especificacion-general-war-bots.md)
+- [Guía técnica — Módulo 3: Garaje y Billetera](Proyecto/guia-tecnica-garaje-italo.md)
+- 🔗 Repositorio completo del proyecto: [italovisconti/war-bots](https://github.com/italovisconti/war-bots)
+
 ## Licencia
 
 Contenido bajo licencia [CC BY-NC 4.0](LICENSE): puedes compartirlo y adaptarlo
