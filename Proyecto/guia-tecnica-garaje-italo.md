@@ -539,7 +539,12 @@ Sin cuerpo; no se envía monto desde el cliente.
 | `nuevo_saldo` | Number | Nuevo saldo: 500 créditos. |
 
 
-## 5. Puntos abiertos
+## 5. Despliegue y entrega continua (CD)
+
+- El servicio completo del Módulo 3 (APIs 21–30, frontend del Garaje/Billetera y la base `jugadores_garaje_db`) debe desplegarse en el proveedor de nube de preferencia del equipo (por ejemplo, Render, Railway, Fly.io, Vercel, Azure, AWS o GCP, junto con MongoDB Atlas), exponiendo una URL pública HTTPS para que los Módulos 1, 2 y 4 puedan consumirlo.
+- El repositorio debe contar con un flujo de **CD** *Continuous Deployment* (mediante GitHub Actions o integración nativa del proveedor) que realice el despliegue automáticamente cada vez que se actualice la rama principal (`main`).
+
+## 6. Puntos abiertos
 
 - Política de autenticación, autorización e idempotencia entre módulos.
 - Catálogo de códigos de error estandarizados para validaciones de negocio (p. ej. `409 Conflict` en débito insuficiente o rescate ya utilizado).

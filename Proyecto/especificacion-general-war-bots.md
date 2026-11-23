@@ -30,6 +30,11 @@ Cada módulo mantiene su propio modelo MongoDB. Los detalles de colecciones y ca
 | Módulo 3 | `jugadores_garaje_db` | [Garaje y billetera — Ítalo Visconti](guia-tecnica-garaje-italo.md) |
 | Módulo 4 | `arena_combate_db` | [Arena — Luis, Sección 2](https://github.com/italovisconti/war-bots/blob/main/guia-tecnica-arena-luis-sec2.md) |
 
+## Despliegue y entrega continua (CD)
+
+- Cada módulo (servicio backend con sus 10 APIs, frontend e instancia MongoDB) debe desplegarse en el proveedor de nube de preferencia del equipo (por ejemplo, Render, Railway, Fly.io, Vercel, Azure, AWS o GCP, junto con MongoDB Atlas), exponiendo una URL pública HTTPS para permitir la integración entre los cuatro módulos.
+- Cada repositorio debe incorporar un flujo de **CD** *Continuous Deployment* (mediante GitHub Actions o integración nativa del proveedor) que ejecute el despliegue de forma automática en cada actualización de la rama principal (`main`).
+
 ## Reglas de negocio comunes
 
 - La cuenta nueva recibe 1.000 créditos. El único rescate por bancarrota otorga 500 créditos cuando el saldo es 0 y no quedan robots operativos. No se permite saldo negativo.
