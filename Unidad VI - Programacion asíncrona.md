@@ -85,6 +85,8 @@ console.log("3. Fin (¡pero aparece primero!)");
 - `console.log("3. Fin")` se ejecuta inmediatamente
 - El navegador sigue respondiendo
 
+<img src="assets/Unidad%20VI%20-%20Programacion%20asincrona/sincrono-vs-asincrono.gif" width="900" alt="Comparación en línea de tiempo entre ejecución síncrona bloqueante, que congela la interfaz, y ejecución asíncrona no bloqueante, que delega la espera y mantiene la interfaz fluida.">
+
 
 #### Pero... ¿Qué es un callback?
 
@@ -252,6 +254,56 @@ fetch("bad-scheme://ejemplo-invalido.com")
 - Captura errores de **cualquier** `.then()` anterior
 - Similar a `try...catch` pero para promesas
 
+##### **3.4 ¿Cómo funciona por dentro? El Event Loop**
+
+JavaScript es **monohilo** (*single-threaded*): solo puede ejecutar **una instrucción a la vez**. Para no congelar el navegador cuando una operación tarda, el entorno de ejecución (el navegador o Node.js) coordina cuatro piezas. Una forma sencilla de imaginarlo es pensar en un **restaurante de comida rápida con un solo cajero**:
+
+1. **Call Stack (Pila de llamadas) — *El cajero***
+	* Es una pila **LIFO** *Last-In, First-Out* donde se ejecuta el código JavaScript línea por línea.
+	* Si una función entra en la pila, el cajero no puede atender ninguna otra hasta que termine y salga.
+
+2. **Web APIs (APIs del navegador) — *La cocina***
+	* Son tareas que el navegador gestiona en segundo plano (`setTimeout`, `fetch`, eventos del **DOM** *Document Object Model*).
+	* Cuando el código llama a `setTimeout` o `fetch`, el Call Stack delega la espera a las Web APIs y pasa de inmediato a la siguiente línea.
+
+3. **Cola de espera — *El mostrador de entregas***
+	* Cuando la tarea en segundo plano termina, su callback no interrumpe al Call Stack; espera su turno en la **Cola de espera** hasta que el cajero quede libre.
+
+4. **Event Loop (Bucle de eventos) — *El encargado***
+	* Vigila de forma continua si el **Call Stack** está completamente vacío.
+	* Cuando queda vacío, toma el siguiente callback de la cola y lo sube al Call Stack para ejecutarlo.
+
+**🧪 EXPERIMENTO 5B: ¿Qué se imprime primero?**
+
+```typescript
+console.log("1. Inicio");
+
+setTimeout(() => {
+  console.log("2. Luego");
+}, 0);
+
+console.log("3. Fin");
+```
+
+**Output esperado:**
+```text
+1. Inicio
+3. Fin
+2. Luego
+```
+
+<img src="assets/Unidad%20VI%20-%20Programacion%20asincrona/event-loop.gif" width="900" alt="Circuito del Event Loop con Call Stack, Web APIs y Cola de espera mostrando por qué un setTimeout de 0 milisegundos se ejecuta después del código síncrono.">
+
+**¿Por qué `"3. Fin"` sale antes que `"2. Luego"`?**
+
+1. `"1. Inicio"` entra al **Call Stack**, se imprime y sale enseguida.
+2. `setTimeout(..., 0)` delega el temporizador a las **Web APIs** y deja su callback en la **Cola de espera**.
+3. `"3. Fin"` se ejecuta directo en el **Call Stack** mientras el callback espera afuera.
+4. Cuando el **Call Stack** queda vacío, el **Event Loop** sube `"2. Luego"` desde la cola y lo ejecuta.
+
+> [!TIP]
+> **Prioridad de las Promesas:** en realidad existen dos colas —una fila prioritaria (**Microtask Queue**) para promesas y `await`, y una fila normal (**Task Queue**) para `setTimeout` y eventos—. El Event Loop siempre vacía primero las promesas.
+
 ---
 
 #### **4. Combinando Múltiples Promesas**
@@ -365,8 +417,10 @@ fetchProducts();
 **¿Qué hace `async/await`?**
 
 - `async`: Declara una función asíncrona (siempre retorna una Promesa)
-- `await`: **Pausa** la ejecución hasta que la promesa se resuelva
+- `await`: **Pausa** la ejecución de esa función hasta que la promesa se resuelva, sin bloquear el resto del programa
 - Permite usar `try...catch` normalmente
+
+<img src="assets/Unidad%20VI%20-%20Programacion%20asincrona/event-loop-async.gif" width="900" alt="Recorrido de async/await y fetch en el Event Loop: await pausa la función y libera el Call Stack para que la interfaz siga respondiendo, y el Event Loop la reanuda desde la Microtask Queue cuando llega la respuesta.">
 
 **Comparación visual:**
 
@@ -454,6 +508,8 @@ async function getParallel() {
 }
 ```
 
+<img src="assets/Unidad%20VI%20-%20Programacion%20asincrona/secuencial-vs-paralelo.gif" width="900" alt="Comparación temporal entre tres peticiones await secuenciales que tardan 6 segundos y Promise.all en paralelo que completa las mismas tres peticiones en 2 segundos.">
+
 **Regla de oro:**
 
 - Si las operaciones son **independientes** → usa `Promise.all()` + `await`
@@ -512,6 +568,43 @@ async function fetchWithRetry(
 ```
 
 ---
+
+#### **7. I/O-bound vs. CPU-bound, Concurrencia y otros lenguajes**
+
+##### **7.1 Tareas I/O-bound vs. CPU-bound**
+
+No todas las tareas "lentas" son iguales, y entender la diferencia explica por qué el Event Loop funciona tan bien en unos casos y se bloquea en otros:
+
+- **Tareas I/O-bound** (**I/O** *Input/Output* — entrada y salida): el cuello de botella está en **esperar** a un recurso externo (peticiones de red, consultas a una base de datos, lectura de archivos). Mientras la red responde, el procesador está libre. Aquí es donde brilla el Event Loop de JavaScript.
+- **Tareas CPU-bound** (intensivas de **CPU** *Central Processing Unit*): el cuello de botella es el **cálculo** (cifrar archivos, comprimir video, entrenar un modelo, recorrer millones de datos). El procesador trabaja al 100 % sin pausas. En un entorno monohilo con Event Loop, una tarea CPU-bound **congela todo el programa**, incluso si está dentro de una función `async` o de una `Promise` (como ocurrió con el ciclo `while` del Experimento 1).
+
+##### **7.2 Esto no son hilos: Concurrencia vs. Paralelismo real**
+
+Cuando `Promise.all()` lanza tres peticiones `fetch()` al mismo tiempo, el sistema operativo y la red esperan las tres respuestas de forma simultánea, pero el código JavaScript sigue ejecutándose en **un solo hilo**. Por eso conviene distinguir dos conceptos:
+
+- **Concurrencia:** gestionar múltiples tareas **intercalándolas por turnos** en un mismo hilo mientras unas esperan I/O (el modelo del Event Loop en JavaScript).
+- **Paralelismo real:** ejecutar varias instrucciones de código **al mismo instante** en distintos núcleos de la CPU usando múltiples hilos.
+
+Si en JavaScript necesitas paralelismo real para cálculo pesado (CPU-bound), debes mover ese trabajo fuera del hilo principal usando **Web Workers** (en el navegador) o **Worker Threads** (en Node.js).
+
+##### **7.3 ¿Cómo lo resuelven otros lenguajes? JavaScript vs. Python vs. Go**
+
+Cada lenguaje elige un modelo distinto según su diseño y caso de uso principal:
+
+| Lenguaje | Modelo por defecto | ¿Cómo maneja I/O? | ¿Cómo logra paralelismo real (CPU)? |
+|---|---|---|---|
+| **JavaScript** (Navegador / Node.js) | Monohilo con **Event Loop** integrado | Asíncrono por defecto (`fetch`, timers, eventos) | **Web Workers** / **Worker Threads** |
+| **Python** | Síncrono y bloqueante por defecto | `asyncio` (Event Loop explícito con `asyncio.run()` y librerías como `httpx` o `aiohttp`) | `multiprocessing` (procesos separados por el **GIL** *Global Interpreter Lock*, o modo *free-threaded* experimental en Python 3.13+) |
+| **Go** | Concurrente y paralelo nativo | **Goroutines** (hilos muy livianos) con I/O no bloqueante transparente | El *runtime* reparte las goroutines automáticamente entre todos los núcleos de la CPU |
+
+- **JavaScript** nació para responder a eventos de interfaz sin congelar el navegador; por eso trae el Event Loop encendido desde el primer momento y casi todas sus APIs de red son asíncronas.
+- **Python** es síncrono por defecto (`requests.get`, `time.sleep`). Aunque ofrece `async/await` mediante `asyncio`, exige iniciar un Event Loop explícito y evitar librerías síncronas dentro de él. Además, el **GIL** tradicional impide que dos hilos ejecuten código Python a la vez en varios núcleos.
+- **Go** no separa el lenguaje en funciones `async` y funciones normales: permite lanzar miles de **goroutines** con la palabra clave `go`, y su planificador las distribuye tanto para esperar I/O como para ejecutar cálculo real en paralelo sobre todos los núcleos del procesador.
+
+> [!IMPORTANT]
+> **Idea clave:** el Event Loop resuelve la **espera** (**I/O-bound**) mediante concurrencia en un solo hilo; no convierte a JavaScript en un lenguaje multihilo para cálculo pesado (**CPU-bound**).
+
+---
 ##### **Conceptos Clave:**
 
 | Concepto | Definición |
@@ -526,6 +619,14 @@ async function fetchWithRetry(
 | **await** | Pausa la ejecución hasta que una promesa se resuelva |
 | **Promise.all()** | Espera a que todas las promesas se cumplan |
 | **Promise.any()** | Espera a que la primera promesa se cumpla |
+| **Call Stack** | Pila LIFO donde se ejecuta el código JavaScript línea por línea |
+| **Microtask Queue** | Cola de alta prioridad para callbacks de promesas y `await` |
+| **Task Queue** | Cola estándar para callbacks de `setTimeout` y eventos de interfaz |
+| **Event Loop** | Mecanismo que mueve callbacks de las colas al Call Stack cuando este queda vacío |
+| **I/O-bound** | Tarea limitada por la espera de red, disco o base de datos; ideal para el Event Loop |
+| **CPU-bound** | Tarea limitada por cálculo intensivo del procesador; bloquea el hilo principal |
+| **Concurrencia** | Intercalar múltiples tareas en un mismo hilo aprovechando tiempos de espera |
+| **Paralelismo** | Ejecutar múltiples tareas al mismo instante en distintos núcleos de la CPU |
 
 ##### **Guía de Decisión: ¿Cuándo usar qué?**
 
