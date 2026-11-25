@@ -124,6 +124,9 @@ setTimeout(() => {
 
 #### **3. Promesas: La Solución Moderna**
 
+> [!IMPORTANT]
+> **Lectura recomendada:** es muy importante revisar la documentación oficial de [Promise en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise) para profundizar en sus estados, el encadenamiento con `.then()` / `.catch()` y todos sus métodos combinadores.
+
 ##### **3.1 Usando fetch() - Tu Primera Promesa Real**
 
 **🧪 EXPERIMENTO 3: Ejecuta esto en la consola**
