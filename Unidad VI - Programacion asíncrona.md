@@ -1,5 +1,9 @@
+> [!NOTE] Grabaciones de clase
+> - [Programación asíncrona — parte 1](https://drive.google.com/file/d/174pxu-hQiWS1NwraG05JQWTe288rn2sb/view?usp=drive_link)
+> - [Programación asíncrona — parte 2](https://drive.google.com/file/d/1BdU6V7ry2NwER83xQQyOSH_Y7UKYnbbV/view?usp=sharing)
+
 > [!NOTE] Referencias
-> Riscutia, 2020 - Capítulo 6 
+> Riscutia, 2020 - Capítulo 6
 > Jansen, 2019 - Capítulo 3
 > Mozilla MDN - [How to use promises](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Async_JS/Promises)
 
