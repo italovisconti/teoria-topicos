@@ -263,7 +263,7 @@ JavaScript es **monohilo** (*single-threaded*): solo puede ejecutar **una instru
 	* Si una función entra en la pila, el cajero no puede atender ninguna otra hasta que termine y salga.
 
 2. **Web APIs (APIs del navegador) — *La cocina***
-	* Son tareas que el navegador gestiona en segundo plano (`setTimeout`, `fetch`, eventos del **DOM** *Document Object Model*).
+	* Son tareas que el navegador gestiona en segundo plano (`setTimeout`, `fetch`, eventos del **DOM** *Document Object Model*) *(en Node.js pasa exactamente igual, solo que esa «cocina» la pone el propio servidor en lugar del navegador; más abajo lo vemos con calma)*.
 	* Cuando el código llama a `setTimeout` o `fetch`, el Call Stack delega la espera a las Web APIs y pasa de inmediato a la siguiente línea.
 
 3. **Cola de espera — *El mostrador de entregas***
@@ -364,6 +364,33 @@ Promise.any([fetchPromise1, fetchPromise2, fetchPromise3])
     console.error(`Todas fallaron: ${error}`);
   });
 ```
+
+##### **4.3 Promise.allSettled() - Todas sin fallar en cadena**
+
+Cuando cargas múltiples recursos independientes y **no quieres que un solo fallo descarte las respuestas exitosas**, usa `Promise.allSettled()`:
+
+```typescript
+// 🧪 EXPERIMENTO 7B
+const resultados = await Promise.allSettled([
+  fetch("https://pokeapi.co/api/v2/pokemon/1"),
+  fetch("https://pokeapi.co/api/v2/pokemon/no-existe-99999"),
+  fetch("https://pokeapi.co/api/v2/pokemon/25")
+]);
+
+for (const res of resultados) {
+  if (res.status === "fulfilled") {
+    console.log("✅ Éxito:", res.value.status);
+  } else {
+    console.log("❌ Falló:", res.reason);
+  }
+}
+```
+
+**Características de Promise.allSettled():**
+
+- ✅ Espera a que **todas** terminen (éxito o error)
+- ✅ **Nunca rechaza** (no salta al `.catch()`)
+- ✅ Devuelve el estado individual de cada promesa (`fulfilled` o `rejected`)
 
 **Cuándo usar cada uno:**
 
@@ -515,6 +542,35 @@ async function getParallel() {
 - Si las operaciones son **independientes** → usa `Promise.all()` + `await`
 - Si una operación **depende** de la otra → usa `await` secuencial
 
+##### **5.6 Error Común: usar async dentro de forEach**
+
+`Array.prototype.forEach` no espera las promesas que devuelve su callback: lanza todas las peticiones sin esperar y el código que sigue se ejecuta antes de tiempo.
+
+```typescript
+const ids = [1, 4, 7];
+
+// ❌ MAL: forEach ignora las promesas que devuelve el callback
+ids.forEach(async (id) => {
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  console.log(res.status);
+});
+console.log("Fin"); // ¡Se imprime ANTES de que lleguen los Pokémon!
+
+// ✅ BIEN (Secuencial): for...of sí respeta await
+for (const id of ids) {
+  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  console.log(res.status);
+}
+
+// ✅ BIEN (En paralelo): map + Promise.all
+const respuestas = await Promise.all(
+  ids.map((id) => fetch(`https://pokeapi.co/api/v2/pokemon/${id}`))
+);
+```
+
+> [!WARNING]
+> **Regla práctica:** nunca uses `forEach(async ...)` si necesitas esperar a que terminen las tareas. Usa `for...of` para ir en orden o `Promise.all(arreglo.map(...))` para lanzarlas en paralelo.
+
 ---
 
 #### **6. Patrones Avanzados y Mejores Prácticas**
@@ -604,6 +660,15 @@ Cada lenguaje elige un modelo distinto según su diseño y caso de uso principal
 > [!IMPORTANT]
 > **Idea clave:** el Event Loop resuelve la **espera** (**I/O-bound**) mediante concurrencia en un solo hilo; no convierte a JavaScript en un lenguaje multihilo para cálculo pesado (**CPU-bound**).
 
+##### **7.4 Un detalle práctico: ¿Existen las "Web APIs" en Node.js?**
+
+Cuando aprendemos el Event Loop solemos ver el nombre **Web APIs** porque los primeros diagramas se pensaron para el navegador, pero vale la pena aclarar qué ocurre en el servidor:
+
+- **El motor de JavaScript no hace el trabajo externo:** tanto Chrome como Node.js usan el mismo motor (**V8**), pero ese motor solo ejecuta el lenguaje base (variables, funciones y el **Call Stack**). Por sí solo no sabe conectarse a internet, contar tiempo ni leer archivos.
+- **En el navegador**, la «cocina» la ponen las **Web APIs** del propio navegador (que manejan el DOM, los clics, `setTimeout` y `fetch`).
+- **En Node.js** no hay navegador ni ventana gráfica, así que la «cocina» la pone el propio entorno de Node (apoyándose en una pieza interna llamada **`libuv`**) para hablar con el sistema operativo: leer archivos del disco, consultar bases de datos o abrir conexiones de red sin bloquear tu código.
+- **¿Por qué en Node también funcionan `fetch` y `setTimeout`?** Porque Node.js adoptó esos mismos nombres estándar para que escribir código en el servidor sea familiar, aunque por debajo los gestione Node y no un navegador.
+
 ---
 ##### **Conceptos Clave:**
 
@@ -619,6 +684,8 @@ Cada lenguaje elige un modelo distinto según su diseño y caso de uso principal
 | **await** | Pausa la ejecución hasta que una promesa se resuelva |
 | **Promise.all()** | Espera a que todas las promesas se cumplan |
 | **Promise.any()** | Espera a que la primera promesa se cumpla |
+| **Promise.race()** | Resuelve o rechaza con la primera promesa que termine |
+| **Promise.allSettled()** | Espera a todas y devuelve el estado individual de cada una |
 | **Call Stack** | Pila LIFO donde se ejecuta el código JavaScript línea por línea |
 | **Microtask Queue** | Cola de alta prioridad para callbacks de promesas y `await` |
 | **Task Queue** | Cola estándar para callbacks de `setTimeout` y eventos de interfaz |
